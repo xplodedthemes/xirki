@@ -143,9 +143,9 @@ Dec. 6, 2018, dev time: 15h
 
 Sept. 14 2018, dev time: 21h.
 
-* Fix: Error when `typography` fields don't have a font-family. [#1916](https://xplodedthemes.com/issues/1916), [#1797](https://github.com/xplodedthemes/xirki/issues/1797), [#1935](https://xplodedthemes.com/issues/1935). props @mintbird
+* Fix: Error when `typography` fields don't have a font-family. [#1916](https://xplodedthemes.com/issues/1916), [#1797](https://xplodedthemes.com/issues/1797), [#1935](https://xplodedthemes.com/issues/1935). props @mintbird
 * Fix: Allow using "Default Browser Font-Family" in default value (`typography` fields) [#1907](https://xplodedthemes.com/pull/1907). props @mintbird
-* Fix: Envato theme-check error [#1914](https://xplodedthemes.com/issues/1914), [#1926](https://github.com/xplodedthemes/xirki/pull/1926). props @timelsass
+* Fix: Envato theme-check error [#1914](https://xplodedthemes.com/issues/1914), [#1926](https://xplodedthemes.com/pull/1926). props @timelsass
 * Fix: HTTPS webfont load error [#1925](https://xplodedthemes.com/issues/1925)
 * Fix: Undefined index PHP notice for background-color. [95ca010](https://xplodedthemes.com/pull/1930/commits/95ca010588878363a7d2042f09428bae260cb602)
 * Fix: Minor Fixes for css-variables added in v3.0.28.
@@ -158,7 +158,7 @@ Sept. 14 2018, dev time: 21h.
 May 17 2018
 
 * Fix: Google-Fonts folder permissions improperly set in v3.0.28.
-* Fix: Select issues in repeater controls [#1892](https://xplodedthemes.com/issues/1892), [#1888](https://github.com/xplodedthemes/xirki/issues/1888) props @asilcetin.
+* Fix: Select issues in repeater controls [#1892](https://xplodedthemes.com/issues/1892), [#1888](https://xplodedthemes.com/issues/1888) props @asilcetin.
 * Fix: Updated Google Fonts to include latest font-family additions.
 
 ## 3.0.32
@@ -409,7 +409,7 @@ It also changes the file structure and paves the way for a 3.1 rewrite which wil
 
 October 12 2017, dev time: 3 hours.
 
-* Fix: Typography controls were not properly saving some sub-values [#1521](https://xplodedthemes.com/issues/1521), [#1560](https://github.com/xplodedthemes/xirki/issues/1560)
+* Fix: Typography controls were not properly saving some sub-values [#1521](https://xplodedthemes.com/issues/1521), [#1560](https://xplodedthemes.com/issues/1560)
 * Fix: Undefined index in the code control [#1567](https://xplodedthemes.com/issues/1567)
 * Fix: CSS Output for multicolor fields [#1564](https://xplodedthemes.com/issues/1564)
 * Fix: JS instantiation of controls in expanded sections [#1559](https://xplodedthemes.com/issues/1559)
@@ -472,7 +472,7 @@ September 21 2017, dev time: 74 hours.
 
 July 8 2017, dev time: 7 hours.
 
-* Fix: Add alpha option to multicolor control. Props @danielortiz [#1321](https://xplodedthemes.com/issues/1321), [#1449](https://github.com/xplodedthemes/xirki/pull/1449)
+* Fix: Add alpha option to multicolor control. Props @danielortiz [#1321](https://xplodedthemes.com/issues/1321), [#1449](https://xplodedthemes.com/pull/1449)
 * Fix: Googlefonts output when `default` argument contains `font-weight` instead of `variant` [#1443](https://xplodedthemes.com/issues/1443)
 * Fix: Removed the `Xirki_Custom_Build` class.
 * Fix: Plugin does not exist error when Xirki is embedded in a theme [#1448](https://xplodedthemes.com/issues/1448)
@@ -557,9 +557,9 @@ This is a major release. Many things have been refactored and optimized. Please 
 * Fix: Dynamic repeater labels now use the label instead of value when picking up label from select field. [#1230](https://xplodedthemes.com/issues/1230)
 * Fix: Sanitization for number fields. [#1240](https://xplodedthemes.com/issues/1240)
 * Fix: Checkboxes sanitization. [#1195](https://xplodedthemes.com/issues/1195)
-* Fix: Link functionality in editor field. [#968](https://xplodedthemes.com/issues/968), [#1159](https://github.com/xplodedthemes/xirki/issues/1159)
+* Fix: Link functionality in editor field. [#968](https://xplodedthemes.com/issues/968), [#1159](https://xplodedthemes.com/issues/1159)
 * Fix: Issues in Field Type editor [#1260](https://xplodedthemes.com/issues/1260)
-* Fix: Problems with sortable control [#1253](https://xplodedthemes.com/issues/1253), [#1197](https://github.com/xplodedthemes/xirki/issues/1197), [#1198](https://xplodedthemes.com/issues/1198)
+* Fix: Problems with sortable control [#1253](https://xplodedthemes.com/issues/1253), [#1197](https://xplodedthemes.com/issues/1197), [#1198](https://xplodedthemes.com/issues/1198)
 * Fix: inaccessibility of options panel [#1194](https://xplodedthemes.com/issues/1194)
 * Fix: Fields "checkbox", "toggle" and "switch" don't save as boolean in PHP, instead integer 0/1 [#1195](https://xplodedthemes.com/issues/1195)
 * Fix: Tooltip not working for switch [#1225](https://xplodedthemes.com/issues/1225)
@@ -571,10 +571,10 @@ This is a major release. Many things have been refactored and optimized. Please 
 * Fix: Disabled the "loading" module by default. Use the `xirki/modules` filter to enable.
 * Fix: Refactored saving user-meta (`'option_type' => 'user_meta'`). [#1325](https://xplodedthemes.com/issues/1325)
 * Fix: Code fields reset [#1122](https://xplodedthemes.com/issues/1122)
-* Fix: Typography fields reset [#1193](https://xplodedthemes.com/issues/1193), [#1219](https://github.com/xplodedthemes/xirki/issues/1219)
+* Fix: Typography fields reset [#1193](https://xplodedthemes.com/issues/1193), [#1219](https://xplodedthemes.com/issues/1219)
 * Fix: Multicolor fields reset [#916](https://xplodedthemes.com/issues/916)
 * Fix: Custom fonts not displayed as active in the font list after saving [#1110](https://xplodedthemes.com/issues/916)
-* Fix: Support for `media_query` when using `'transport' => 'auto'`. [#1184](https://xplodedthemes.com/issues/1184), [#1127](https://github.com/xplodedthemes/xirki/issues/1127)
+* Fix: Support for `media_query` when using `'transport' => 'auto'`. [#1184](https://xplodedthemes.com/issues/1184), [#1127](https://xplodedthemes.com/issues/1127)
 * Fix: Typography field bug when switching Google Fonts with different weights [#1180](https://xplodedthemes.com/issues/1180)
 * Fix: Font Variant outputs invalid property value (typography field) [#1058](https://xplodedthemes.com/issues/1058)
 * Fix: Updated webfonts. [#1303](https://xplodedthemes.com/issues/1303)
@@ -583,20 +583,20 @@ This is a major release. Many things have been refactored and optimized. Please 
 * Fix: 403 errors for CSS and JS files on localhost. [#1309](https://xplodedthemes.com/issues/1309)
 * Fix: Customizer doesn't load if ACF PRO is active. [#1302](https://xplodedthemes.com/issues/1302)
 * Fix: Enqueued google font even if not in use. [#1297](https://xplodedthemes.com/issues/1297)
-* Fix: Default dimension value does not process well percent units [#1254](https://xplodedthemes.com/issues/1254), [#497](https://github.com/xplodedthemes/xirki/issues/497)
+* Fix: Default dimension value does not process well percent units [#1254](https://xplodedthemes.com/issues/1254), [#497](https://xplodedthemes.com/issues/497)
 * Fix: Editor field issue with RTL languages [#340](https://xplodedthemes.com/issues/340)
 * Fix: Windows Server Issues [#1318](https://xplodedthemes.com/issues/1318)
 * New: Added code to automatically handle translations when Xirki is embedded in a theme [#1381](https://xplodedthemes.com/issues/1381)
 * New: Automating postMessage for composite fields. [#694](https://xplodedthemes.com/issues/694)
 * New: OR logic in field dependencies. [#839](https://xplodedthemes.com/issues/839)
-* New: Radio-image labels. [#1090](https://xplodedthemes.com/issues/1090), [#1220](https://github.com/xplodedthemes/xirki/issues/1220)
+* New: Radio-image labels. [#1090](https://xplodedthemes.com/issues/1090), [#1220](https://xplodedthemes.com/issues/1220)
 * New: Typography fields support for `prefix`, `suffix`, `value_pattern` in `output` argument. [#1183](https://xplodedthemes.com/issues/1183)
-* New: Multi-selects in repeater fields. [#780](https://xplodedthemes.com/issues/780), [#1261](https://github.com/xplodedthemes/xirki/issues/1261)
-* New: Typography fields now support live-updating using `'transport' => 'auto'`. [#1184](https://xplodedthemes.com/issues/1184), [#528](https://github.com/xplodedthemes/xirki/issues/528), [#1186](https://xplodedthemes.com/issues/1186)
+* New: Multi-selects in repeater fields. [#780](https://xplodedthemes.com/issues/780), [#1261](https://xplodedthemes.com/issues/1261)
+* New: Typography fields now support live-updating using `'transport' => 'auto'`. [#1184](https://xplodedthemes.com/issues/1184), [#528](https://xplodedthemes.com/issues/528), [#1186](https://xplodedthemes.com/issues/1186)
 * New: Typography fields now support filtering the available fonts. [#1202](https://xplodedthemes.com/issues/1202)
-* New: Typography fields now support loading multiple variants. [#992](https://xplodedthemes.com/issues/992), [#1082](https://github.com/xplodedthemes/xirki/issues/1082), [#1114](https://xplodedthemes.com/issues/1114)
+* New: Typography fields now support loading multiple variants. [#992](https://xplodedthemes.com/issues/992), [#1082](https://xplodedthemes.com/issues/1082), [#1114](https://xplodedthemes.com/issues/1114)
 * New: Select fields now support optgroups. [#1120](https://xplodedthemes.com/issues/1120)
-* New: Added new background control-type. [#741](https://xplodedthemes.com/issues/741), [#1283](https://github.com/xplodedthemes/xirki/pull/1283), [#952](https://xplodedthemes.com/pull/952)
+* New: Added new background control-type. [#741](https://xplodedthemes.com/issues/741), [#1283](https://xplodedthemes.com/pull/1283), [#952](https://xplodedthemes.com/pull/952)
 * New: Replaced selectize with select2. [#1177](https://xplodedthemes.com/issues/1177)
 * New: Notifications for number fields when value is invalid depending on min/max/step values.
 * New: Rebuilt typography control using select2. [cafb89b ](https://xplodedthemes.com/commit/e27fa1ff19ab52b34467bfb306b5870d858f409f)
