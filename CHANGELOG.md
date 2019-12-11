@@ -1,7 +1,7 @@
 ## 3.0.45 - 2019-09-01
 
 ### Fixed
-* Compatibility with the latest Gutenberg plugin versions.
+* Compatibility with the latest Gutenberg plugin versions......
 * Styles for normal font-weights in typography controls (`regular` to `400` conversion).
 
 ### Changed
