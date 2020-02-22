@@ -1389,7 +1389,7 @@ xirki = jQuery.extend( xirki, {
 				}
 
 				// Check in googlefonts.
-				if ( 'undefined' !== typeof self.google.fonts.items[ family ] ) {
+				if ( 'undefined' !== typeof self.google.fonts.items && 'undefined' !== typeof self.google.fonts.items[ family ] ) {
 					return 'google';
 				}
 				return false;
