@@ -746,10 +746,10 @@ xirki = jQuery.extend( xirki, {
 							return markup;
 						}
 					};
-					if ( control.params.placeholder ) {
-						selectWooOptions.placeholder = control.params.placeholder;
-						selectWooOptions.allowClear = true;
-					}
+				if ( control.params.placeholder ) {
+					selectWooOptions.placeholder = control.params.placeholder;
+					selectWooOptions.allowClear = true;
+				}
 
 				if ( 1 < multiple ) {
 					selectWooOptions.maximumSelectionLength = multiple;
@@ -2343,7 +2343,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		this.frame = wp.media( {
 			states: [
-			new wp.media.controller.Library( {
+				new wp.media.controller.Library( {
 					library: wp.media.query( { type: libMediaType } ),
 					multiple: false,
 					date: false
