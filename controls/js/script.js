@@ -1692,6 +1692,12 @@ wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.exten
 				setTimeout( function() {
 					control.saveValue( 'background-color', picker.val() );
 				}, 100 );
+			},
+			//Added clear
+			clear: function (event) {
+				setTimeout( function() {
+					control.saveValue( 'color', '' );
+				}, 100 );
 			}
 		} );
 

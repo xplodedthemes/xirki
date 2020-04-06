@@ -85,6 +85,12 @@ xirki = jQuery.extend( xirki, {
 						setTimeout( function() {
 							xirki.setting.set( control.id, picker.val() );
 						}, 20 );
+					},
+					//Added clear
+					clear: function (event) {
+						setTimeout( function() {
+							control.saveValue( 'color', '' );
+						}, 100 );
 					}
 				} );
 			}
