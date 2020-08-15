@@ -86,12 +86,6 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 					setTimeout( function() {
 						control.saveValue( 'color', picker.val() );
 					}, 100 );
-				},
-				//Added clear
-				clear: function (event) {
-					setTimeout( function() {
-						control.saveValue( 'color', '' );
-					}, 100 );
 				}
 			} );
 		}

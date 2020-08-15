@@ -4,7 +4,7 @@
  *
  * @package     Xirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2019, XplodedThemes (@XplodedThemes)
+ * @copyright   Copyright (c) 2020, David Vongries
  * @license     https://opensource.org/licenses/MIT
  * @since       3.0.34
  */

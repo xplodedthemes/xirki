@@ -746,10 +746,10 @@ xirki = jQuery.extend( xirki, {
 							return markup;
 						}
 					};
-				if ( control.params.placeholder ) {
-					selectWooOptions.placeholder = control.params.placeholder;
-					selectWooOptions.allowClear = true;
-				}
+					if ( control.params.placeholder ) {
+						selectWooOptions.placeholder = control.params.placeholder;
+						selectWooOptions.allowClear = true;
+					}
 
 				if ( 1 < multiple ) {
 					selectWooOptions.maximumSelectionLength = multiple;
@@ -1389,7 +1389,7 @@ xirki = jQuery.extend( xirki, {
 				}
 
 				// Check in googlefonts.
-				if ( 'undefined' !== typeof self.google.fonts.items && 'undefined' !== typeof self.google.fonts.items[ family ] ) {
+				if ( 'undefined' !== typeof self.google.fonts.items[ family ] ) {
 					return 'google';
 				}
 				return false;
@@ -1691,12 +1691,6 @@ wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.exten
 			change: function() {
 				setTimeout( function() {
 					control.saveValue( 'background-color', picker.val() );
-				}, 100 );
-			},
-			//Added clear
-			clear: function (event) {
-				setTimeout( function() {
-					control.saveValue( 'color', '' );
 				}, 100 );
 			}
 		} );
@@ -2349,7 +2343,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		this.frame = wp.media( {
 			states: [
-				new wp.media.controller.Library( {
+			new wp.media.controller.Library( {
 					library: wp.media.query( { type: libMediaType } ),
 					multiple: false,
 					date: false
@@ -3217,12 +3211,6 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 				change: function() {
 					setTimeout( function() {
 						control.saveValue( 'color', picker.val() );
-					}, 100 );
-				},
-				//Added clear
-				clear: function (event) {
-					setTimeout( function() {
-						control.saveValue( 'color', '' );
 					}, 100 );
 				}
 			} );

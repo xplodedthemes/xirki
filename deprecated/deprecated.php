@@ -7,7 +7,7 @@
  * @package     Xirki
  * @category    Core
  * @author      XplodedThemes (@XplodedThemes)
- * @copyright   Copyright (c) 2019, XplodedThemes (@XplodedThemes)
+ * @copyright   Copyright (c) 2020, David Vongries
  * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */

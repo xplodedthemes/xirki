@@ -1,25 +1,34 @@
 # Xirki Customizer Framework #
-**Contributors:** [aristath](https://profiles.wordpress.org/aristath), [dannycooper](https://profiles.wordpress.org/dannycooper), [wplemon](https://profiles.wordpress.org/wplemon), [igmoweb](https://profiles.wordpress.org/igmoweb)  
+**Contributors:** [davidvongries](https://profiles.wordpress.org/davidvongries), [aristath](https://profiles.wordpress.org/aristath), [dannycooper](https://profiles.wordpress.org/dannycooper), [wplemon](https://profiles.wordpress.org/wplemon), [igmoweb](https://profiles.wordpress.org/igmoweb)  
 **Tags:** customizer, options framework, theme, mods, toolkit, gutenberg  
-**Donate link:** https://xplodedthemes.com/donate  
 **Requires at least:** 4.9  
-**Tested up to:** 5.2  
-**Stable tag:** 3.0.45  
+**Tested up to:** 5.5  
+**Stable tag:** 3.1.5  
 **License:** MIT  
 **License URI:** https://opensource.org/licenses/MIT  
 
-The ultimate framework for theme developers using the WordPress Customizer
-
+The ultimate customizer framework for WordPress theme developers.
 
 ## Description ##
 
 [![Build Status](https://travis-ci.org/xplodedthemes/xirki.svg?branch=develop)](https://travis-ci.org/xplodedthemes/xirki) [![Code Climate](https://codeclimate.com/github/xplodedthemes/xirki/badges/gpa.svg)](https://codeclimate.com/github/xplodedthemes/xirki) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/66d6d8b6a4654cd18686ed1cd9f1bfb3)](https://www.codacy.com/app/xplodedthemes/xirki?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xplodedthemes/xirki&amp;utm_campaign=Badge_Grade) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xplodedthemes/xirki/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/xplodedthemes/xirki/?branch=develop)
 
-Using Xirki theme developers can create rich experiences for the WordPress Customizer using best coding practices.
+[Xirki](https://xplodedthemes.com/?utm_source=repo&utm_medium=description&utm_campaign=xirki) allows theme developers to build themes quicker & more easily.
 
-Included are more than 30 custom control types ranging from simple sliders to complex typography controls with Google-Fonts integration, automatic CSS generation, `postMessage` scripts automatically generated, tooltips and a lot of extras that make developing themes a lot faster for developers and meaningful for users.
+With over **30 custom controls** ranging from simple sliders to complex typography controls with Google-Fonts integration and features like automatic CSS & `postMessage` script generation, Xirki makes theme development a breeze.
 
-### Control Types ###
+### Features ###
+* Increased Performance
+* Simplified API
+* Automatic CSS Generation
+* Automatic postMessage Generation
+* Partial Refresh
+* Conditional Logic
+* GDPR Compliance
+* Improved Page Speed
+* & more!
+
+### Controls ###
 
 * [Background Customizer Control](https://xplodedthemes.com/docs/controls/background)
 * [Checkbox Customizer Control](https://xplodedthemes.com/docs/controls/checkbox)
@@ -52,20 +61,23 @@ Included are more than 30 custom control types ranging from simple sliders to co
 * [Typography Customizer Control](https://xplodedthemes.com/docs/controls/typography)
 * [Upload Customizer Control](https://xplodedthemes.com/docs/controls/upload)
 
-Premium controls are also available for premium themes:
+### Theme Example ###
 
-* [Xirki WCAG Text Colorpicker](https://wplemon.com/downloads/xirki-wcag-text-colorpicker/)
-* [Xirki WCAG Links Colorpicker](https://wplemon.com/downloads/xirki-wcag-link-colorpicker/)
-* [Xirki Box Model](https://wplemon.com/downloads/xirki-box-model/)
-* [Xirki Box Shadow](https://wplemon.com/downloads/xirki-box-shadow/)
+[Page Builder Framework](https://wp-pagebuilderframework.com?utm_source=xirki&utm_medium=repo&utm_campaign=wpbf)'s customizer settings are a prime example of what can be achieved with Xirki.
 
-All premium controls are also [available as a pack](https://wplemon.com/downloads/xirki-premium-controls-pack/)
+Conditional Logic, Partial Refresh, postMessage and a variety of controls - It has all of it.
 
-Theme developers should be familiar with the Customizer API before you start writing your theme using Xirki. An excellent handbook for the WordPress Customizer can be found on the [developer.wordpress.org](https://developer.wordpress.org/themes/customize-api/) website.
+### Documentation ###
 
-You can find detailed documentation on how to use Xirki on [xirki.org](https://xplodedthemes.com)
+You can find detailed documentation on how to use Xirki on [xirki.org](https://xplodedthemes.com/?utm_source=repo&utm_medium=description&utm_campaign=xirki)
 
-[Development and issues on Github](https://xplodedthemes.com).
+### Xirki PRO ###
+
+Xirki PRO is currently in development. You can [sign up for the waiting list](https://xplodedthemes.com/pricing/?utm_source=repo&utm_medium=description&utm_campaign=xirki) here to be notified about updates.
+
+### Disclaimer ###
+
+Theme developers should be familiar with the Customizer API before starting to build a theme using Xirki. An excellent handbook for the WordPress Customizer can be found on the [developer.wordpress.org](https://developer.wordpress.org/themes/customize-api/) website.
 
 ## Installation ##
 
@@ -75,22 +87,12 @@ If you want to integrate Xirki in your theme or plugin, please read the instruct
 
 ## Changelog ##
 
-### 3.0.34 ###
+### 3.1.5 - August 10, 2020 ###
 
-### 3.0.45 - 2019-09-01 ###
+* Tested up to WordPress 5.5.
+* Fixed: Added wp-i18n dependency to alpha color picker script.
+* Fixed: Color picker styles.
+* Fixed: Color picker styles in background control.
+* Fixed: Color picker styles in multicolor control.
 
-### Fixed
-* Compatibility with the latest Gutenberg plugin versions.
-* Styles for normal font-weights in typography controls (`regular` to `400` conversion).
-
-### Changed
-* Updated Google-Fonts lists.
-
-### Removed
-* Backup fonts are no longer needed since google-fonts are no longer loaded from the google CDN.
-
-### Deprecated
-* `xirki_fonts_backup_fonts` filter.
-* `Xirki_Fonts::get_backup_fonts()` method.
-
-[See the previous changelogs here](https://xplodedthemes.com/blob/master/CHANGELOG.md).
+[See the previous changelogs here](https://github.com/xirki-framework/xirki/blob/master/CHANGELOG.md).
