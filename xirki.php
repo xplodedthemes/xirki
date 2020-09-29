@@ -9,8 +9,8 @@
  * Text Domain:   xirki
  * Requires WP:   4.9
  * Requires PHP:  5.3
- * GitHub Plugin URI: xirki-framework/xirki
- * GitHub Plugin URI: https://xplodedthemes.com
+ * GitHub Plugin URI: xplodedthemes/xirki
+ * GitHub Plugin URI: https://github.com/xplodedthemes/xirki
  *
  * @package   Xirki
  * @category  Core
@@ -40,7 +40,7 @@ if ( ! defined( 'XIRKI_PLUGIN_FILE' ) ) {
 
 // Define the XIRKI_VERSION constant.
 if ( ! defined( 'XIRKI_VERSION' ) ) {
-	define( 'XIRKI_VERSION', '3.1.5' );
+	define( 'XIRKI_VERSION', '3.1.3' );
 }
 
 // Make sure the path is properly set.

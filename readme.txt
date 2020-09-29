@@ -96,4 +96,4 @@ If you want to integrate Xirki in your theme or plugin, please read the instruct
 * Fixed: Color picker styles in background control.
 * Fixed: Color picker styles in multicolor control.
 
-[See the previous changelogs here](https://xplodedthemes.com/blob/master/CHANGELOG.md).
+[See the previous changelogs here](https://github.com/xplodedthemes/xirki/blob/master/CHANGELOG.md).
