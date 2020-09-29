@@ -1,8 +1,8 @@
-/* global kirkiTooltips */
+/* global xirkiTooltips */
 jQuery( document ).ready( function() {
 
-	function kirkiTooltipAdd( control ) {
-		_.each( kirkiTooltips, function( tooltip ) {
+	function xirkiTooltipAdd( control ) {
+		_.each( xirkiTooltips, function( tooltip ) {
 			let trigger,
 				controlID,
 				content;
@@ -42,11 +42,11 @@ jQuery( document ).ready( function() {
 	wp.customize.control.each( function( control ) {
 		wp.customize.section( control.section(), function( section ) {
 			if ( section.expanded() || wp.customize.settings.autofocus.control === control.id ) {
-				kirkiTooltipAdd( control );
+				xirkiTooltipAdd( control );
 			} else {
 				section.expanded.bind( function( expanded ) {
 					if ( expanded ) {
-						kirkiTooltipAdd( control );
+						xirkiTooltipAdd( control );
 					}
 				} );
 			}

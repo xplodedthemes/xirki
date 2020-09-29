@@ -1,12 +1,12 @@
-/* global kirkiIcons */
+/* global xirkiIcons */
 jQuery( document ).ready( function() {
 
 	'use strict';
 
-	if ( ! _.isUndefined( kirkiIcons.section ) ) {
+	if ( ! _.isUndefined( xirkiIcons.section ) ) {
 
 		// Parse sections and add icons.
-		_.each( kirkiIcons.section, function( icon, sectionID ) {
+		_.each( xirkiIcons.section, function( icon, sectionID ) {
 
 			// Add icons in list.
 			jQuery( '#accordion-section-' + sectionID + ' > h3' ).addClass( 'dashicons-before ' + icon );
@@ -17,9 +17,9 @@ jQuery( document ).ready( function() {
 
 	}
 
-	if ( ! _.isUndefined( kirkiIcons.panel ) ) {
+	if ( ! _.isUndefined( xirkiIcons.panel ) ) {
 
-		_.each( kirkiIcons.panel, function( icon, panelID ) {
+		_.each( xirkiIcons.panel, function( icon, panelID ) {
 
 			// Add icons in lists & headers.
 			jQuery( '#accordion-panel-' + panelID + ' > h3, #sub-accordion-panel-' + panelID + ' .panel-title' ).addClass( 'dashicons-before ' + icon );

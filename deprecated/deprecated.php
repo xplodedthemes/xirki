@@ -4,10 +4,10 @@
  *
  * We could easily delete all these but they are kept for backwards-compatibility purposes.
  *
- * @package     Kirki
+ * @package     Xirki
  * @category    Core
- * @author      Ari Stathopoulos (@aristath)
- * @copyright   Copyright (c) 2020, David Vongries
+ * @author      XplodedThemes (@XplodedThemes)
+ * @copyright   Copyright (c) 2020, XplodedThemes
  * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */

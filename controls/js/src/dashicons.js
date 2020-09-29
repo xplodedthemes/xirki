@@ -1,1 +1,1 @@
-wp.customize.controlConstructor['kirki-dashicons'] = wp.customize.kirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['xirki-dashicons'] = wp.customize.xirkiDynamicControl.extend( {} );

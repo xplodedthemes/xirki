@@ -1,7 +1,7 @@
 /* jshint -W079 */
 /* jshint unused:false */
-if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
-	var kirkiSetSettingValue = { // eslint-disable-line vars-on-top
+if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
+	var xirkiSetSettingValue = { // eslint-disable-line vars-on-top
 
 		/**
 		 * Set the value of the control.
@@ -32,9 +32,9 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 			// Process visually changing the value based on the control type.
 			switch ( subControl.type ) {
 
-				case 'kirki-background':
+				case 'xirki-background':
 					if ( ! _.isUndefined( value['background-color'] ) ) {
-						$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value['background-color'] );
+						$this.setColorPicker( $this.findElement( setting, '.xirki-color-control' ), value['background-color'] );
 					}
 					$this.findElement( setting, '.placeholder, .thumbnail' ).removeClass().addClass( 'placeholder' ).html( 'No file selected' );
 					_.each( [ 'background-repeat', 'background-position' ], function( subVal ) {
@@ -49,39 +49,39 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					jQuery( $this.findElement( setting, '.background-hidden-value' ).attr( 'value', valueJSON ) ).trigger( 'change' );
 					break;
 
-				case 'kirki-code':
+				case 'xirki-code':
 					jQuery( $this.findElement( setting, '.CodeMirror' ) )[0].CodeMirror.setValue( value );
 					break;
 
 				case 'checkbox':
-				case 'kirki-switch':
-				case 'kirki-toggle':
+				case 'xirki-switch':
+				case 'xirki-toggle':
 					value = ( 1 === value || '1' === value || true === value ) ? true : false;
 					jQuery( $this.findElement( setting, 'input' ) ).prop( 'checked', value );
 					wp.customize.instance( setting ).set( value );
 					break;
 
-				case 'kirki-select':
+				case 'xirki-select':
 					$this.setSelectWoo( $this.findElement( setting, 'select' ), value );
 					break;
 
-				case 'kirki-slider':
+				case 'xirki-slider':
 					jQuery( $this.findElement( setting, 'input' ) ).prop( 'value', value );
-					jQuery( $this.findElement( setting, '.kirki_range_value .value' ) ).html( value );
+					jQuery( $this.findElement( setting, '.xirki_range_value .value' ) ).html( value );
 					break;
 
-				case 'kirki-generic':
+				case 'xirki-generic':
 					if ( _.isUndefined( subControl.choices ) || _.isUndefined( subControl.choices.element ) ) {
 						subControl.choices.element = 'input';
 					}
 					jQuery( $this.findElement( setting, subControl.choices.element ) ).prop( 'value', value );
 					break;
 
-				case 'kirki-color':
-					$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value );
+				case 'xirki-color':
+					$this.setColorPicker( $this.findElement( setting, '.xirki-color-control' ), value );
 					break;
 
-				case 'kirki-multicheck':
+				case 'xirki-multicheck':
 					$this.findElement( setting, 'input' ).each( function() {
 						jQuery( this ).prop( 'checked', false );
 					} );
@@ -90,22 +90,22 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					} );
 					break;
 
-				case 'kirki-multicolor':
+				case 'xirki-multicolor':
 					_.each( value, function( subVal, index ) {
 						$this.setColorPicker( $this.findElement( setting, '.multicolor-index-' + index ), subVal );
 					} );
 					break;
 
-				case 'kirki-radio-buttonset':
-				case 'kirki-radio-image':
-				case 'kirki-radio':
-				case 'kirki-dashicons':
-				case 'kirki-color-palette':
-				case 'kirki-palette':
+				case 'xirki-radio-buttonset':
+				case 'xirki-radio-image':
+				case 'xirki-radio':
+				case 'xirki-dashicons':
+				case 'xirki-color-palette':
+				case 'xirki-palette':
 					jQuery( $this.findElement( setting, 'input[value="' + value + '"]' ) ).prop( 'checked', true );
 					break;
 
-				case 'kirki-typography':
+				case 'xirki-typography':
 					_.each( [ 'font-family', 'variant' ], function( subVal ) {
 						if ( ! _.isUndefined( value[ subVal ] ) ) {
 							$this.setSelectWoo( $this.findElement( setting, '.' + subVal + ' select' ), value[ subVal ] );
@@ -118,24 +118,24 @@ if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
 					} );
 
 					if ( ! _.isUndefined( value.color ) ) {
-						$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value.color );
+						$this.setColorPicker( $this.findElement( setting, '.xirki-color-control' ), value.color );
 					}
 					valueJSON = JSON.stringify( value ).replace( /'/g, '&#39' );
 					jQuery( $this.findElement( setting, '.typography-hidden-value' ).attr( 'value', valueJSON ) ).trigger( 'change' );
 					break;
 
-				case 'kirki-dimensions':
+				case 'xirki-dimensions':
 					_.each( value, function( subValue, id ) {
 						jQuery( $this.findElement( setting, '.' + id + ' input' ) ).prop( 'value', subValue );
 					} );
 					break;
 
-				case 'kirki-repeater':
+				case 'xirki-repeater':
 
 					// Not yet implemented.
 					break;
 
-				case 'kirki-custom':
+				case 'xirki-custom':
 
 					// Do nothing.
 					break;

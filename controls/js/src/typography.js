@@ -1,7 +1,7 @@
-/* global kirkiL10n, kirki */
-wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicControl.extend( {
+/* global xirkiL10n, xirki */
+wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicControl.extend( {
 
-	initKirkiControl: function() {
+	initXirkiControl: function() {
 
 		'use strict';
 
@@ -80,7 +80,7 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 
 		// Color.
 		if ( 'undefined' !== typeof control.params.default.color ) {
-			picker = this.container.find( '.kirki-color-control' );
+			picker = this.container.find( '.xirki-color-control' );
 			picker.wpColorPicker( {
 				change: function() {
 					setTimeout( function() {
@@ -136,25 +136,25 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 		// Combine forces and build the final data.
 		data = jQuery.extend( {}, controlFontFamilies, {
 			default: {
-				text: kirkiL10n.defaultCSSValues,
+				text: xirkiL10n.defaultCSSValues,
 				children: [
-					{ id: '', text: kirkiL10n.defaultBrowserFamily },
+					{ id: '', text: xirkiL10n.defaultBrowserFamily },
 					{ id: 'initial', text: 'initial' },
 					{ id: 'inherit', text: 'inherit' }
 				]
 			},
 			standard: {
-				text: kirkiL10n.standardFonts,
+				text: xirkiL10n.standardFonts,
 				children: standardFonts
 			},
 			google: {
-				text: kirkiL10n.googleFonts,
+				text: xirkiL10n.googleFonts,
 				children: googleFonts
 			}
 		} );
 
-		if ( kirkiL10n.isScriptDebug ) {
-			console.info( 'Kirki Debug: Font families for control "' + control.id + '":' );
+		if ( xirkiL10n.isScriptDebug ) {
+			console.info( 'Xirki Debug: Font families for control "' + control.id + '":' );
 			console.info( data );
 		}
 
@@ -167,7 +167,7 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 
 		// Set the initial value.
 		if ( value['font-family'] || '' === value['font-family'] ) {
-			value['font-family'] = kirki.util.parseHtmlEntities( value['font-family'].replace( /'/g, '"' ) );
+			value['font-family'] = xirki.util.parseHtmlEntities( value['font-family'].replace( /'/g, '"' ) );
 			fontSelect.val( value['font-family'] ).trigger( 'change' );
 		}
 
@@ -204,7 +204,7 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 		}
 
 		// Hide if we're not on a google-font.
-		if ( 'inherit' === fontFamily || 'initial' === fontFamily || 'google' !== kirki.util.webfonts.getFontType( fontFamily ) ) {
+		if ( 'inherit' === fontFamily || 'initial' === fontFamily || 'google' !== xirki.util.webfonts.getFontType( fontFamily ) ) {
 			jQuery( control.selector + ' .font-backup' ).hide();
 			return;
 		}
@@ -250,14 +250,14 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 			selector   = control.selector + ' .variant select',
 			data       = [],
 			isValid    = false,
-			fontType   = kirki.util.webfonts.getFontType( fontFamily ),
+			fontType   = xirki.util.webfonts.getFontType( fontFamily ),
 			variants   = [ '', 'regular', 'italic', '700', '700italic' ],
 			fontWeight,
 			variantSelector,
 			fontStyle;
 
 		if ( 'google' === fontType ) {
-			variants = kirki.util.webfonts.google.getVariants( fontFamily );
+			variants = xirki.util.webfonts.google.getVariants( fontFamily );
 		}
 
 		// Check if we've got custom variants defined for this font.
@@ -268,8 +268,8 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 				variants = control.params.choices.fonts.variants[ fontFamily ];
 			}
 		}
-		if ( kirkiL10n.isScriptDebug ) {
-			console.info( 'Kirki Debug: Font variants for font-family "' + fontFamily + '":' );
+		if ( xirkiL10n.isScriptDebug ) {
+			console.info( 'Xirki Debug: Font variants for font-family "' + fontFamily + '":' );
 			console.info( variants );
 		}
 
@@ -347,7 +347,7 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 	 */
 	getFonts: function() {
 		var control            = this,
-			initialGoogleFonts = kirki.util.webfonts.google.getFonts(),
+			initialGoogleFonts = xirki.util.webfonts.google.getFonts(),
 			googleFonts        = {},
 			googleFontsSort    = 'alpha',
 			googleFontsNumber  = 0,
@@ -360,7 +360,7 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 				if ( ! isNaN( control.params.choices.fonts.google[1] ) ) {
 					googleFontsNumber = parseInt( control.params.choices.fonts.google[1], 10 );
 				}
-				googleFonts = kirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
+				googleFonts = xirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
 
 			} else {
 				_.each( control.params.choices.fonts.google, function( fontName ) {
@@ -370,21 +370,21 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 				} );
 			}
 		} else {
-			googleFonts = kirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
+			googleFonts = xirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
 		}
 
 		// Get standard fonts.
 		if ( ! _.isEmpty( control.params.choices.fonts.standard ) ) {
 			_.each( control.params.choices.fonts.standard, function( fontName ) {
-				if ( 'undefined' !== typeof kirki.util.webfonts.standard.fonts[ fontName ] && ! _.isEmpty( kirki.util.webfonts.standard.fonts[ fontName ] ) ) {
+				if ( 'undefined' !== typeof xirki.util.webfonts.standard.fonts[ fontName ] && ! _.isEmpty( xirki.util.webfonts.standard.fonts[ fontName ] ) ) {
 					standardFonts[ fontName ] = {};
-					if ( 'undefined' !== kirki.util.webfonts.standard.fonts[ fontName ].stack && ! _.isEmpty( kirki.util.webfonts.standard.fonts[ fontName ].stack ) ) {
-						standardFonts[ fontName ].family = kirki.util.webfonts.standard.fonts[ fontName ].stack;
+					if ( 'undefined' !== xirki.util.webfonts.standard.fonts[ fontName ].stack && ! _.isEmpty( xirki.util.webfonts.standard.fonts[ fontName ].stack ) ) {
+						standardFonts[ fontName ].family = xirki.util.webfonts.standard.fonts[ fontName ].stack;
 					} else {
 						standardFonts[ fontName ].family = googleFonts[ fontName ];
 					}
-					if ( 'undefined' !== kirki.util.webfonts.standard.fonts[ fontName ].label && ! _.isEmpty( kirki.util.webfonts.standard.fonts[ fontName ].label ) ) {
-						standardFonts[ fontName ].label = kirki.util.webfonts.standard.fonts[ fontName ].label;
+					if ( 'undefined' !== xirki.util.webfonts.standard.fonts[ fontName ].label && ! _.isEmpty( xirki.util.webfonts.standard.fonts[ fontName ].label ) ) {
+						standardFonts[ fontName ].label = xirki.util.webfonts.standard.fonts[ fontName ].label;
 					} else if ( ! _.isEmpty( standardFonts[ fontName ] ) ) {
 						standardFonts[ fontName ].label = standardFonts[ fontName ];
 					}
@@ -396,7 +396,7 @@ wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicC
 				}
 			} );
 		} else {
-			_.each( kirki.util.webfonts.standard.fonts, function( font, id ) {
+			_.each( xirki.util.webfonts.standard.fonts, function( font, id ) {
 				standardFonts[ id ] = {
 					family: font.stack,
 					label: font.label

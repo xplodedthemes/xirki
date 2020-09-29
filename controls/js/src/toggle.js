@@ -1,6 +1,6 @@
-wp.customize.controlConstructor['kirki-toggle'] = wp.customize.kirkiDynamicControl.extend( {
+wp.customize.controlConstructor['xirki-toggle'] = wp.customize.xirkiDynamicControl.extend( {
 
-	initKirkiControl: function() {
+	initXirkiControl: function() {
 
 		var control = this,
 			checkboxValue = control.setting._value;

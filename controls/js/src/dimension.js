@@ -1,13 +1,13 @@
-/* global dimensionkirkiL10n */
-wp.customize.controlConstructor['kirki-dimension'] = wp.customize.kirkiDynamicControl.extend( {
+/* global dimensionxirkiL10n */
+wp.customize.controlConstructor['xirki-dimension'] = wp.customize.xirkiDynamicControl.extend( {
 
-	initKirkiControl: function() {
+	initXirkiControl: function() {
 
 		var control = this,
 			value;
 
 		// Notifications.
-		control.kirkiNotifications();
+		control.xirkiNotifications();
 
 		// Save the value
 		this.container.on( 'change keyup paste', 'input', function() {
@@ -20,7 +20,7 @@ wp.customize.controlConstructor['kirki-dimension'] = wp.customize.kirkiDynamicCo
 	/**
 	 * Handles notifications.
 	 */
-	kirkiNotifications: function() {
+	xirkiNotifications: function() {
 
 		var control        = this,
 			acceptUnitless = ( 'undefined' !== typeof control.params.choices && 'undefined' !== typeof control.params.choices.accept_unitless && true === control.params.choices.accept_unitless );
@@ -29,12 +29,12 @@ wp.customize.controlConstructor['kirki-dimension'] = wp.customize.kirkiDynamicCo
 			setting.bind( function( value ) {
 				var code = 'long_title';
 
-				if ( false === kirki.util.validate.cssValue( value ) && ( ! acceptUnitless || isNaN( value ) ) ) {
+				if ( false === xirki.util.validate.cssValue( value ) && ( ! acceptUnitless || isNaN( value ) ) ) {
 					setting.notifications.add( code, new wp.customize.Notification(
 						code,
 						{
 							type: 'warning',
-							message: dimensionkirkiL10n['invalid-value']
+							message: dimensionxirkiL10n['invalid-value']
 						}
 					) );
 				} else {

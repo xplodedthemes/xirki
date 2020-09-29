@@ -3,8 +3,8 @@
  * Plugin Name:   Xirki Customizer Framework
  * Plugin URI:    https://xplodedthemes.com
  * Description:   The Ultimate WordPress Customizer Framework
- * Author:        David Vongries
- * Author URI:    https://wp-pagebuilderframework.com/
+ * Author:        XplodedThemes
+ * Author URI:    https://xplodedthemes.com/
  * Version:       3.1.4
  * Text Domain:   xirki
  * Requires WP:   4.9
@@ -15,7 +15,7 @@
  * @package   Xirki
  * @category  Core
  * @author    XplodedThemes (@XplodedThemes)
- * @copyright Copyright (c) 2020, David Vongries
+ * @copyright Copyright (c) 2020, XplodedThemes
  * @license   https://opensource.org/licenses/MIT
  * @since     1.0
  */

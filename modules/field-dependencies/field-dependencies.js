@@ -1,4 +1,4 @@
-var kirkiDependencies = {
+var xirkiDependencies = {
 
 	listenTo: {},
 
@@ -6,7 +6,7 @@ var kirkiDependencies = {
 		var self = this;
 
 		wp.customize.control.each( function( control ) {
-			self.showKirkiControl( control );
+			self.showXirkiControl( control );
 		} );
 
 		_.each( self.listenTo, function( slaves, master ) {
@@ -17,7 +17,7 @@ var kirkiDependencies = {
 							isDisplayed;
 
 						isDisplayed = function() {
-							return self.showKirkiControl( wp.customize.control( slave ) );
+							return self.showXirkiControl( wp.customize.control( slave ) );
 						};
 						setActiveState = function() {
 							control.active.set( isDisplayed() );
@@ -40,15 +40,15 @@ var kirkiDependencies = {
 	 * @param {string|object} control - The control-id or the control object.
 	 * @returns {bool}
 	 */
-	showKirkiControl: function( control ) {
+	showXirkiControl: function( control ) {
 		var self     = this,
 			show     = true,
 			isOption = (
 				control.params && // Check if control.params exists.
-				control.params.kirkiOptionType &&  // Check if option_type exists.
-				'option' === control.params.kirkiOptionType &&  // We're using options.
-				control.params.kirkiOptionName && // Check if option_name exists.
-				! _.isEmpty( control.params.kirkiOptionName ) // Check if option_name is not empty.
+				control.params.xirkiOptionType &&  // Check if option_type exists.
+				'option' === control.params.xirkiOptionType &&  // We're using options.
+				control.params.xirkiOptionName && // Check if option_name exists.
+				! _.isEmpty( control.params.xirkiOptionName ) // Check if option_name is not empty.
 			),
 			i;
 
@@ -74,7 +74,7 @@ var kirkiDependencies = {
 	/**
 	 * Check a condition.
 	 *
-	 * @param {Object} requirement - The requirement, inherited from showKirkiControl.
+	 * @param {Object} requirement - The requirement, inherited from showXirkiControl.
 	 * @param {Object} control - The control object.
 	 * @param {bool}   isOption - Whether it's an option or not.
 	 * @param {string} relation - Can be one of 'AND' or 'OR'.
@@ -89,8 +89,8 @@ var kirkiDependencies = {
 		if ( isOption && requirement.setting ) {
 
 			// Make sure we don't already have the option_name in there.
-			if ( -1 === requirement.setting.indexOf( control.params.kirkiOptionName + '[' ) ) {
-				requirement.setting = control.params.kirkiOptionName + '[' + requirement.setting + ']';
+			if ( -1 === requirement.setting.indexOf( control.params.xirkiOptionName + '[' ) ) {
+				requirement.setting = control.params.xirkiOptionName + '[' + requirement.setting + ']';
 			}
 		}
 
@@ -206,5 +206,5 @@ var kirkiDependencies = {
 };
 
 jQuery( document ).ready( function() {
-	kirkiDependencies.init();
+	xirkiDependencies.init();
 } );

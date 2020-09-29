@@ -1,5 +1,5 @@
-/* global kirkiControlLoader */
-wp.customize.controlConstructor['kirki-multicolor'] = wp.customize.Control.extend( {
+/* global xirkiControlLoader */
+wp.customize.controlConstructor['xirki-multicolor'] = wp.customize.Control.extend( {
 
 	// When we're finished loading continue processing
 	ready: function() {
@@ -9,14 +9,14 @@ wp.customize.controlConstructor['kirki-multicolor'] = wp.customize.Control.exten
 		var control = this;
 
 		// Init the control.
-		if ( ! _.isUndefined( window.kirkiControlLoader ) && _.isFunction( kirkiControlLoader ) ) {
-			kirkiControlLoader( control );
+		if ( ! _.isUndefined( window.xirkiControlLoader ) && _.isFunction( xirkiControlLoader ) ) {
+			xirkiControlLoader( control );
 		} else {
-			control.initKirkiControl();
+			control.initXirkiControl();
 		}
 	},
 
-	initKirkiControl: function() {
+	initXirkiControl: function() {
 
 		'use strict';
 
@@ -27,7 +27,7 @@ wp.customize.controlConstructor['kirki-multicolor'] = wp.customize.Control.exten
 			i       = 0;
 
 		// Proxy function that handles changing the individual colors
-		function kirkiMulticolorChangeHandler( control, value, subSetting ) {
+		function xirkiMulticolorChangeHandler( control, value, subSetting ) {
 
 			var picker = control.container.find( '.multicolor-index-' + subSetting ),
 				args   = {
@@ -57,7 +57,7 @@ wp.customize.controlConstructor['kirki-multicolor'] = wp.customize.Control.exten
 
 		// Colors loop
 		while ( i < Object.keys( colors ).length ) {
-			kirkiMulticolorChangeHandler( this, value, keys[ i ] );
+			xirkiMulticolorChangeHandler( this, value, keys[ i ] );
 			i++;
 		}
 	},

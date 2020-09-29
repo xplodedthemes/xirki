@@ -1,5 +1,5 @@
-/* global kirkiControlLoader */
-wp.customize.controlConstructor['kirki-background'] = wp.customize.Control.extend( {
+/* global xirkiControlLoader */
+wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.extend( {
 
 	// When we're finished loading continue processing
 	ready: function() {
@@ -9,18 +9,18 @@ wp.customize.controlConstructor['kirki-background'] = wp.customize.Control.exten
 		var control = this;
 
 		// Init the control.
-		if ( ! _.isUndefined( window.kirkiControlLoader ) && _.isFunction( kirkiControlLoader ) ) {
-			kirkiControlLoader( control );
+		if ( ! _.isUndefined( window.xirkiControlLoader ) && _.isFunction( xirkiControlLoader ) ) {
+			xirkiControlLoader( control );
 		} else {
-			control.initKirkiControl();
+			control.initXirkiControl();
 		}
 	},
 
-	initKirkiControl: function() {
+	initXirkiControl: function() {
 
 		var control = this,
 			value   = control.setting._value,
-			picker  = control.container.find( '.kirki-color-control' );
+			picker  = control.container.find( '.xirki-color-control' );
 
 		// Hide unnecessary controls if the value doesn't have an image.
 		if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {

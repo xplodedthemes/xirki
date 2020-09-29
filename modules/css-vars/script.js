@@ -1,5 +1,5 @@
-/* global kirkiCssVarFields */
-var kirkiCssVars = {
+/* global xirkiCssVarFields */
+var xirkiCssVars = {
 
 	/**
 	 * Get styles.
@@ -8,7 +8,7 @@ var kirkiCssVars = {
 	 * @returns {Object}
 	 */
 	getStyles: function() {
-		var style     = jQuery( '#kirki-css-vars' ),
+		var style     = jQuery( '#xirki-css-vars' ),
 			styles    = style.html().replace( ':root{', '' ).replace( '}', '' ).split( ';' ),
 			stylesObj = {};
 
@@ -40,10 +40,10 @@ var kirkiCssVars = {
 };
 
 jQuery( document ).ready( function() {
-	_.each( kirkiCssVarFields, function( field ) {
+	_.each( xirkiCssVarFields, function( field ) {
 		wp.customize( field.settings, function( value ) {
 			value.bind( function( newVal ) {
-				var styles = kirkiCssVars.getStyles();
+				var styles = xirkiCssVars.getStyles();
 
 				_.each( field.css_vars, function( cssVar ) {
 					if ( 'object' === typeof newVal ) {
@@ -54,7 +54,7 @@ jQuery( document ).ready( function() {
 						styles[ cssVar[0] ] = cssVar[1].replace( '$', newVal );
 					}
 				} );
-				jQuery( '#kirki-css-vars' ).html( kirkiCssVars.buildStyle( styles ) );
+				jQuery( '#xirki-css-vars' ).html( xirkiCssVars.buildStyle( styles ) );
 			} );
 		} );
 	} );
@@ -62,9 +62,9 @@ jQuery( document ).ready( function() {
 
 wp.customize.bind( 'preview-ready', function() {
 	wp.customize.preview.bind( 'active', function() {
-		_.each( kirkiCssVarFields, function( field ) {
+		_.each( xirkiCssVarFields, function( field ) {
 			wp.customize( field.settings, function( value ) {
-				var styles = kirkiCssVars.getStyles(),
+				var styles = xirkiCssVars.getStyles(),
 					newVal = window.parent.wp.customize( value.id ).get();
 				_.each( field.css_vars, function( cssVar ) {
 					if ( 'object' === typeof newVal ) {
@@ -75,7 +75,7 @@ wp.customize.bind( 'preview-ready', function() {
 						styles[ cssVar[0] ] = cssVar[1].replace( '$', newVal );
 					}
 				} );
-				jQuery( '#kirki-css-vars' ).html( kirkiCssVars.buildStyle( styles ) );
+				jQuery( '#xirki-css-vars' ).html( xirkiCssVars.buildStyle( styles ) );
 			} );
 		} );
 	} );
