@@ -1,6 +1,6 @@
-wp.customize.controlConstructor['xirki-slider'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-slider'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 		var control      = this,
 			changeAction = ( 'postMessage' === control.setting.transport ) ? 'mousemove change' : 'change',
 			rangeInput   = control.container.find( 'input[type="range"]' ),

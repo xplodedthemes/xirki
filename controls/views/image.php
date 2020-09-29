@@ -2,7 +2,7 @@
 /**
  * Customizer controls underscore.js template.
  *
- * @package     Xirki
+ * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2020, David Vongries
  * @license     https://opensource.org/licenses/MIT
@@ -31,13 +31,13 @@ if ( _.isObject( data.value ) && ! _.isUndefined( data.value.url ) ) {
 
 data.choices.labels = _.isObject( data.choices.labels ) ? data.choices.labels : {};
 data.choices.labels = _.defaults( data.choices.labels, {
-	select: '<?php esc_html_e( 'Select image', 'xirki' ); ?>',
-	change: '<?php esc_html_e( 'Change image', 'xirki' ); ?>',
-	'default': '<?php esc_html_e( 'Default', 'xirki' ); ?>',
-	remove: '<?php esc_html_e( 'Remove', 'xirki' ); ?>',
-	placeholder: '<?php esc_html_e( 'No image selected', 'xirki' ); ?>',
-	frame_title: '<?php esc_html_e( 'Select image', 'xirki' ); ?>',
-	frame_button: '<?php esc_html_e( 'Choose image', 'xirki' ); ?>',
+	select: '<?php esc_html_e( 'Select image', 'kirki' ); ?>',
+	change: '<?php esc_html_e( 'Change image', 'kirki' ); ?>',
+	'default': '<?php esc_html_e( 'Default', 'kirki' ); ?>',
+	remove: '<?php esc_html_e( 'Remove', 'kirki' ); ?>',
+	placeholder: '<?php esc_html_e( 'No image selected', 'kirki' ); ?>',
+	frame_title: '<?php esc_html_e( 'Select image', 'kirki' ); ?>',
+	frame_button: '<?php esc_html_e( 'Choose image', 'kirki' ); ?>',
 } );
 #>
 

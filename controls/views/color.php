@@ -2,7 +2,7 @@
 /**
  * Customizer controls underscore.js template.
  *
- * @package     Xirki
+ * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2020, David Vongries
  * @license     https://opensource.org/licenses/MIT
@@ -24,7 +24,7 @@ data = _.defaults( data, {
 } );
 #>
 
-<div class="xirki-input-container" data-id="{{ data['data-id'] }}" data-has-alpha="{{ data['data-alpha'] }}">
+<div class="kirki-input-container" data-id="{{ data['data-id'] }}" data-has-alpha="{{ data['data-alpha'] }}">
 	<label>
 		<# if ( data.label ) { #>
 			<span class="customize-control-title">{{{ data.label }}}</span>
@@ -41,7 +41,7 @@ data = _.defaults( data, {
 		data-default-color="{{ data['data-default-color'] }}"
 		data-alpha="{{ data['data-alpha'] }}"
 		value="{{ data.value }}"
-		class="xirki-color-control"
+		class="kirki-color-control"
 		data-id="{{ data['data-id'] }}"
 	/>
 </div>

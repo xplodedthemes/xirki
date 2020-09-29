@@ -1,6 +1,6 @@
-wp.customize.controlConstructor['xirki-switch'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-switch'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		'use strict';
 

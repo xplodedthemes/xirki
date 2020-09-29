@@ -1,30 +1,30 @@
 @charset "UTF-8";
-.customize-control-xirki-background {
+.customize-control-kirki-background {
   position: relative;
 }
-.customize-control-xirki-background .iris-picker-inner {
+.customize-control-kirki-background .iris-picker-inner {
   display: grid;
   grid-template-columns: 1fr 20px 20px;
   grid-gap: 7px;
 }
-.customize-control-xirki-background .iris-picker-inner > * {
+.customize-control-kirki-background .iris-picker-inner > * {
   width: 100% !important;
   margin-left: 0 !important;
 }
-.customize-control-xirki-background .background-attachment h4,
-.customize-control-xirki-background .background-color h4,
-.customize-control-xirki-background .background-position h4,
-.customize-control-xirki-background .background-repeat h4,
-.customize-control-xirki-background .background-size h4 {
+.customize-control-kirki-background .background-attachment h4,
+.customize-control-kirki-background .background-color h4,
+.customize-control-kirki-background .background-position h4,
+.customize-control-kirki-background .background-repeat h4,
+.customize-control-kirki-background .background-size h4 {
   margin-bottom: 5px;
 }
-.customize-control-xirki-background .background-attachment .buttonset,
-.customize-control-xirki-background .background-size .buttonset {
+.customize-control-kirki-background .background-attachment .buttonset,
+.customize-control-kirki-background .background-size .buttonset {
   display: flex;
   flex-wrap: wrap;
 }
-.customize-control-xirki-background .background-attachment .buttonset .switch-label,
-.customize-control-xirki-background .background-size .buttonset .switch-label {
+.customize-control-kirki-background .background-attachment .buttonset .switch-label,
+.customize-control-kirki-background .background-size .buttonset .switch-label {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #555;
@@ -33,34 +33,34 @@
   text-align: center;
   flex-grow: 1;
 }
-.customize-control-xirki-background .background-attachment .buttonset .switch-input:checked + .switch-label,
-.customize-control-xirki-background .background-size .buttonset .switch-input:checked + .switch-label {
+.customize-control-kirki-background .background-attachment .buttonset .switch-input:checked + .switch-label,
+.customize-control-kirki-background .background-size .buttonset .switch-input:checked + .switch-label {
   background-color: #3498DB;
   color: #fff;
 }
 
-.customize-control-xirki-code textarea {
+.customize-control-kirki-code textarea {
   width: 100%;
   min-height: 200px;
 }
 
-.customize-control-xirki-color-palette {
+.customize-control-kirki-color-palette {
   position: relative;
 }
-.customize-control-xirki-color-palette label {
+.customize-control-kirki-color-palette label {
   position: relative;
   display: inline-block;
   padding: 0;
   margin: 0;
 }
-.customize-control-xirki-color-palette .colors-wrapper {
+.customize-control-kirki-color-palette .colors-wrapper {
   max-height: 300px;
   overflow-y: auto;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
 }
-.customize-control-xirki-color-palette .colors-wrapper .color-palette-color {
+.customize-control-kirki-color-palette .colors-wrapper .color-palette-color {
   color: transparent;
   display: block;
   width: 100%;
@@ -68,16 +68,16 @@
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.customize-control-xirki-color-palette .colors-wrapper.round label {
+.customize-control-kirki-color-palette .colors-wrapper.round label {
   padding: 3px;
 }
-.customize-control-xirki-color-palette .colors-wrapper.round .color-palette-color {
+.customize-control-kirki-color-palette .colors-wrapper.round .color-palette-color {
   border-radius: 50%;
 }
-.customize-control-xirki-color-palette .colors-wrapper.box-shadow .color-palette-color {
+.customize-control-kirki-color-palette .colors-wrapper.box-shadow .color-palette-color {
   box-shadow: inset 3px 3px 13px 2px rgba(0, 0, 0, 0.2);
 }
-.customize-control-xirki-color-palette .colors-wrapper input:checked + label .color-palette-color {
+.customize-control-kirki-color-palette .colors-wrapper input:checked + label .color-palette-color {
   border: 0;
   border: 4px solid #3498DB;
   position: relative;
@@ -85,61 +85,61 @@
   top: -3px;
   z-index: 1;
 }
-.customize-control-xirki-color-palette .colors-wrapper.with-margin label {
+.customize-control-kirki-color-palette .colors-wrapper.with-margin label {
   margin: 3px;
 }
-.customize-control-xirki-color-palette .colors-wrapper input {
+.customize-control-kirki-color-palette .colors-wrapper input {
   display: none;
 }
-.customize-control-xirki-color input[data-type=hue] + .iris-strip-horiz .iris-slider {
+.customize-control-kirki-color input[data-type=hue] + .iris-strip-horiz .iris-slider {
   background-image: -webkit-linear-gradient(left, red, #ff7f00, yellow, #80ff00, lime, #00ff80, aqua, #007fff, blue, #7f00ff, fuchsia, #ff0080, red) !important;
   widows: 100% !important;
 }
-.customize-control-xirki-color .xirki-input-container[data-has-alpha=false] .iris-picker.iris-border {
+.customize-control-kirki-color .kirki-input-container[data-has-alpha=false] .iris-picker.iris-border {
   width: 100% !important;
 }
-.customize-control-xirki-color .xirki-input-container[data-has-alpha=false] .iris-picker .iris-square {
+.customize-control-kirki-color .kirki-input-container[data-has-alpha=false] .iris-picker .iris-square {
   margin-right: 7px !important;
 }
-.customize-control-xirki-color .xirki-input-container[data-has-alpha=true] .iris-picker-inner {
+.customize-control-kirki-color .kirki-input-container[data-has-alpha=true] .iris-picker-inner {
   display: grid;
   grid-template-columns: 1fr 20px 20px;
   grid-gap: 7px;
 }
-.customize-control-xirki-color .xirki-input-container[data-has-alpha=true] .iris-picker-inner > * {
+.customize-control-kirki-color .kirki-input-container[data-has-alpha=true] .iris-picker-inner > * {
   width: 100% !important;
   margin-left: 0 !important;
 }
-.customize-control-xirki-color .iris-only-strip {
+.customize-control-kirki-color .iris-only-strip {
   width: 100% !important;
 }
 
-.customize-control-xirki-dashicons {
+.customize-control-kirki-dashicons {
   position: relative;
 }
-.customize-control-xirki-dashicons label {
+.customize-control-kirki-dashicons label {
   position: relative;
   display: inline-block;
 }
-.customize-control-xirki-dashicons .icons-wrapper {
+.customize-control-kirki-dashicons .icons-wrapper {
   max-height: 300px;
   overflow-y: scroll;
 }
-.customize-control-xirki-dashicons .icons-wrapper h4 {
+.customize-control-kirki-dashicons .icons-wrapper h4 {
   font-weight: 300;
   margin: 0.7em 0;
 }
-.customize-control-xirki-dashicons .icons-wrapper .dashicons {
+.customize-control-kirki-dashicons .icons-wrapper .dashicons {
   padding: 3px;
   font-size: 25px;
   width: 25px;
   height: 25px;
   border: 2px solid transparent;
 }
-.customize-control-xirki-dashicons .icons-wrapper input {
+.customize-control-kirki-dashicons .icons-wrapper input {
   display: none;
 }
-.customize-control-xirki-dashicons .icons-wrapper input:checked + label .dashicons {
+.customize-control-kirki-dashicons .icons-wrapper input:checked + label .dashicons {
   border: 2px solid #3498DB;
   color: #000;
 }
@@ -211,99 +211,99 @@
   color: #999;
 }
 
-.customize-control-xirki-dimensions {
+.customize-control-kirki-dimensions {
   position: relative;
 }
-.customize-control-xirki-dimensions .wrapper {
+.customize-control-kirki-dimensions .wrapper {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
 }
-.customize-control-xirki-dimensions .wrapper .control {
+.customize-control-kirki-dimensions .wrapper .control {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.customize-control-xirki-dimensions .wrapper .control > div {
+.customize-control-kirki-dimensions .wrapper .control > div {
   width: 48%;
 }
-.customize-control-xirki-dimensions .wrapper .control > div h5 {
+.customize-control-kirki-dimensions .wrapper .control > div h5 {
   margin: 10px 0 7px;
 }
-.customize-control-xirki-dimensions .wrapper .control > div .inner {
+.customize-control-kirki-dimensions .wrapper .control > div .inner {
   display: flex;
 }
 
-.customize-control-xirki-editor textarea {
+.customize-control-kirki-editor textarea {
   width: 100%;
 }
 
-.customize-control-xirki-generic input {
+.customize-control-kirki-generic input {
   width: 100%;
 }
-.customize-control-xirki-generic textarea {
+.customize-control-kirki-generic textarea {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.customize-control-xirki-multicolor .wp-picker-holder {
+.customize-control-kirki-multicolor .wp-picker-holder {
   margin-bottom: 7px;
 }
-.customize-control-xirki-multicolor .iris-picker-inner {
+.customize-control-kirki-multicolor .iris-picker-inner {
   display: grid;
   grid-template-columns: 1fr 20px 20px;
   grid-gap: 7px;
 }
-.customize-control-xirki-multicolor .iris-picker-inner > * {
+.customize-control-kirki-multicolor .iris-picker-inner > * {
   width: 100% !important;
   margin-left: 0 !important;
 }
-.customize-control-xirki-multicolor .multicolor-single-color-wrapper {
+.customize-control-kirki-multicolor .multicolor-single-color-wrapper {
   display: flex;
   justify-content: space-between;
 }
-.customize-control-xirki-multicolor .multicolor-single-label {
+.customize-control-kirki-multicolor .multicolor-single-label {
   order: 2;
 }
-.customize-control-xirki-multicolor .wp-picker-container {
+.customize-control-kirki-multicolor .wp-picker-container {
   width: 100%;
 }
-.customize-control-xirki-multicolor .wp-picker-container > .wp-color-result {
+.customize-control-kirki-multicolor .wp-picker-container > .wp-color-result {
   width: 100%;
 }
-.customize-control-xirki-multicolor .wp-picker-container.wp-picker-active + .multicolor-single-label {
+.customize-control-kirki-multicolor .wp-picker-container.wp-picker-active + .multicolor-single-label {
   display: none;
 }
 
-.customize-control-xirki-number .customize-control-content {
+.customize-control-kirki-number .customize-control-content {
   display: flex;
   align-items: stretch;
 }
-.customize-control-xirki-number .customize-control-content input {
+.customize-control-kirki-number .customize-control-content input {
   width: 100%;
   -moz-appearance: textfield;
 }
-.customize-control-xirki-number .customize-control-content input::-webkit-inner-spin-button, .customize-control-xirki-number .customize-control-content input::-webkit-outer-spin-button {
+.customize-control-kirki-number .customize-control-content input::-webkit-inner-spin-button, .customize-control-kirki-number .customize-control-content input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.customize-control-xirki-number .customize-control-content .quantity {
+.customize-control-kirki-number .customize-control-content .quantity {
   min-width: 2rem;
   max-width: 2rem;
   text-align: center;
   line-height: 24px;
 }
-.customize-control-xirki-palette {
+.customize-control-kirki-palette {
   position: relative;
 }
-.customize-control-xirki-palette input[type=radio] {
+.customize-control-kirki-palette input[type=radio] {
   display: none;
 }
-.customize-control-xirki-palette input[type=radio]:checked + label {
+.customize-control-kirki-palette input[type=radio]:checked + label {
   border: 2px solid #3498DB;
 }
-.customize-control-xirki-palette label {
+.customize-control-kirki-palette label {
   background: none;
   padding: 0;
   border-top: 3px solid transparent;
@@ -311,7 +311,7 @@
   margin-bottom: 5px;
   display: flex;
 }
-.customize-control-xirki-palette label span {
+.customize-control-kirki-palette label span {
   padding: 10px 0;
   flex-grow: 1;
   font-size: 0;
@@ -325,13 +325,13 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.customize-control-xirki-palette label span:first-child {
+.customize-control-kirki-palette label span:first-child {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
-.customize-control-xirki-palette label span:last-child {
+.customize-control-kirki-palette label span:last-child {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
-.customize-control-xirki-palette label span:hover {
+.customize-control-kirki-palette label span:hover {
   padding: 10px;
   flex-grow: 3;
   min-width: 60px;
@@ -340,11 +340,11 @@
   color: #000;
 }
 
-.customize-control-xirki-radio-buttonset .buttonset {
+.customize-control-kirki-radio-buttonset .buttonset {
   display: flex;
   flex-wrap: wrap;
 }
-.customize-control-xirki-radio-buttonset .buttonset .switch-label {
+.customize-control-kirki-radio-buttonset .buttonset .switch-label {
   background: rgba(0, 0, 0, 0.1);
   border: 1px rgba(0, 0, 0, 0.1);
   color: #555d66;
@@ -353,20 +353,20 @@
   padding: 0.5em 1em;
   flex-grow: 1;
 }
-.customize-control-xirki-radio-buttonset .buttonset .switch-input:checked + .switch-label {
+.customize-control-kirki-radio-buttonset .buttonset .switch-input:checked + .switch-label {
   background-color: #00a0d2;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.customize-control-xirki-radio-image > .image {
+.customize-control-kirki-radio-image > .image {
   display: flex;
   flex-wrap: wrap;
 }
-.customize-control-xirki-radio-image label {
+.customize-control-kirki-radio-image label {
   position: relative;
   display: inline-block;
 }
-.customize-control-xirki-radio-image label .image-label {
+.customize-control-kirki-radio-image label .image-label {
   display: none;
   position: absolute;
   top: 0;
@@ -376,28 +376,28 @@
   background: rgba(255, 255, 255, 0.7);
   font-weight: bold;
 }
-.customize-control-xirki-radio-image label .image-label .inner {
+.customize-control-kirki-radio-image label .image-label .inner {
   width: 100%;
   height: 100%;
   text-align: center;
   padding: 0.5em;
   vertical-align: middle;
 }
-.customize-control-xirki-radio-image label:hover .image-label {
+.customize-control-kirki-radio-image label:hover .image-label {
   display: block;
 }
-.customize-control-xirki-radio-image input {
+.customize-control-kirki-radio-image input {
   display: none;
 }
-.customize-control-xirki-radio-image input img {
+.customize-control-kirki-radio-image input img {
   border: 1px solid transparent;
 }
-.customize-control-xirki-radio-image input:checked + label img {
+.customize-control-kirki-radio-image input:checked + label img {
   -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
   border: 1px solid #3498DB;
 }
-.customize-control-xirki-radio-image input + label .image-clickable {
+.customize-control-kirki-radio-image input + label .image-clickable {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -407,23 +407,23 @@
   height: 100%;
 }
 
-.customize-control-xirki-radio {
+.customize-control-kirki-radio {
   position: relative;
 }
-.customize-control-xirki-radio input[type=radio] {
+.customize-control-kirki-radio input[type=radio] {
   width: 18px;
   height: 18px;
 }
-.customize-control-xirki-radio input[type=radio]:checked:before {
+.customize-control-kirki-radio input[type=radio]:checked:before {
   width: 10px;
   height: 10px;
   margin: 3px;
 }
-.customize-control-xirki-radio label {
+.customize-control-kirki-radio label {
   display: list-item;
   margin-bottom: 7px;
 }
-.customize-control-xirki-radio label .option-description {
+.customize-control-kirki-radio label .option-description {
   display: block;
   color: rgba(0, 0, 0, 0.35);
   font-size: 0.9em;
@@ -556,21 +556,21 @@
   width: 48%;
 }
 
-.xirki-image-attachment {
+.kirki-image-attachment {
   margin: 0;
   text-align: center;
   margin-bottom: 10px;
 }
-.xirki-image-attachment img {
+.kirki-image-attachment img {
   display: inline-block;
 }
 
-.xirki-file-attachment {
+.kirki-file-attachment {
   margin: 0;
   text-align: center;
   margin-bottom: 10px;
 }
-.xirki-file-attachment .file {
+.kirki-file-attachment .file {
   display: block;
   padding: 10px 5px;
   border: 1px dotted #c3c3c3;
@@ -586,13 +586,13 @@
   color: #fff;
 }
 
-.customize-control-xirki-slider .wrapper {
+.customize-control-kirki-slider .wrapper {
   display: flex;
   align-items: center;
   padding: 15px 0 7px;
   position: relative;
 }
-.customize-control-xirki-slider .wrapper .slider-reset {
+.customize-control-kirki-slider .wrapper .slider-reset {
   position: absolute;
   top: 0;
   right: 0;
@@ -600,11 +600,11 @@
   transition: 0.3s ease-in-out;
   color: rgba(0, 0, 0, 0.3);
 }
-.customize-control-xirki-slider .wrapper .slider-reset:hover {
+.customize-control-kirki-slider .wrapper .slider-reset:hover {
   transform: scale(1.3);
   color: #DC3232;
 }
-.customize-control-xirki-slider .wrapper input[type=range] {
+.customize-control-kirki-slider .wrapper input[type=range] {
   display: block;
   -webkit-appearance: none;
   background-color: #bdc3c7;
@@ -614,7 +614,7 @@
   margin: 0 auto;
   outline: 0;
 }
-.customize-control-xirki-slider .wrapper input[type=range]::-webkit-slider-thumb {
+.customize-control-kirki-slider .wrapper input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background-color: #0085ba;
   width: 17px;
@@ -624,14 +624,14 @@
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
-​ .customize-control-xirki-slider .wrapper input[type=range]::-webkit-slider-thumb:hover {
+​ .customize-control-kirki-slider .wrapper input[type=range]::-webkit-slider-thumb:hover {
   background-color: #006799;
   border: 2px solid #0085ba;
 }
-.customize-control-xirki-slider .wrapper input[type=range]::-webkit-slider-thumb:active {
+.customize-control-kirki-slider .wrapper input[type=range]::-webkit-slider-thumb:active {
   transform: scale(1.2);
 }
-.customize-control-xirki-slider .wrapper input[type=text] {
+.customize-control-kirki-slider .wrapper input[type=text] {
   font-size: 13px;
   background: transparent;
   border: none;
@@ -640,50 +640,50 @@
   padding: 0;
   width: 40px;
 }
-.customize-control-xirki-slider .wrapper .value {
+.customize-control-kirki-slider .wrapper .value {
   display: flex;
   align-items: baseline;
 }
 
-.customize-control-xirki-sortable ul.ui-sortable li {
+.customize-control-kirki-sortable ul.ui-sortable li {
   padding: 5px 10px;
   border: 1px solid #333;
   background: #fff;
 }
-.customize-control-xirki-sortable ul.ui-sortable li .dashicons.dashicons-menu {
+.customize-control-kirki-sortable ul.ui-sortable li .dashicons.dashicons-menu {
   float: right;
 }
-.customize-control-xirki-sortable ul.ui-sortable li .dashicons.visibility {
+.customize-control-kirki-sortable ul.ui-sortable li .dashicons.visibility {
   margin-right: 10px;
 }
-.customize-control-xirki-sortable ul.ui-sortable li.invisible {
+.customize-control-kirki-sortable ul.ui-sortable li.invisible {
   color: #aaa;
   border: 1px dashed #aaa;
 }
-.customize-control-xirki-sortable ul.ui-sortable li.invisible .dashicons.visibility {
+.customize-control-kirki-sortable ul.ui-sortable li.invisible .dashicons.visibility {
   color: #aaa;
 }
 
-.customize-control-xirki-switch {
+.customize-control-kirki-switch {
   position: relative;
 }
-.customize-control-xirki-switch .switch-off,
-.customize-control-xirki-switch .switch-on {
+.customize-control-kirki-switch .switch-off,
+.customize-control-kirki-switch .switch-on {
   opacity: 1;
   padding: 8px;
   font-size: 14px;
   line-height: 18px;
 }
-.customize-control-xirki-switch .switch-on {
+.customize-control-kirki-switch .switch-on {
   color: #fff;
   opacity: 0;
   padding-right: 0;
 }
-.customize-control-xirki-switch .switch-off {
+.customize-control-kirki-switch .switch-off {
   color: #777;
   padding-left: 0;
 }
-.customize-control-xirki-switch .switch {
+.customize-control-kirki-switch .switch {
   border: none;
   margin-bottom: 1.5rem;
   outline: 0;
@@ -691,7 +691,7 @@
   user-select: none;
   border-radius: 3rem;
 }
-.customize-control-xirki-switch label {
+.customize-control-kirki-switch label {
   background: #b4b9be;
   float: left;
   cursor: pointer;
@@ -702,7 +702,7 @@
   transition: left 0.15s ease-out;
   border-radius: 3rem;
 }
-.customize-control-xirki-switch label:after {
+.customize-control-kirki-switch label:after {
   background: #FFFFFF;
   content: "";
   display: block;
@@ -714,39 +714,39 @@
   transition: all 0.25s ease-in-out;
   border-radius: 3rem;
 }
-.customize-control-xirki-switch input + label {
+.customize-control-kirki-switch input + label {
   margin-left: 0;
   margin-right: 0;
 }
-.customize-control-xirki-switch input:checked + label {
+.customize-control-kirki-switch input:checked + label {
   background: #0073aa;
 }
-.customize-control-xirki-switch input:checked + label:after {
+.customize-control-kirki-switch input:checked + label:after {
   left: auto;
   right: 5px;
   background: #ffffff;
 }
-.customize-control-xirki-switch input:checked + label .switch-on {
+.customize-control-kirki-switch input:checked + label .switch-on {
   opacity: 1;
 }
-.customize-control-xirki-switch input:checked + label .switch-off {
+.customize-control-kirki-switch input:checked + label .switch-off {
   opacity: 0;
 }
 
-.customize-control-xirki-toggle {
+.customize-control-kirki-toggle {
   position: relative;
 }
-.customize-control-xirki-toggle label {
+.customize-control-kirki-toggle label {
   display: flex;
   flex-wrap: wrap;
 }
-.customize-control-xirki-toggle label .customize-control-title {
+.customize-control-kirki-toggle label .customize-control-title {
   width: calc(100% - 40px);
 }
-.customize-control-xirki-toggle label .description {
+.customize-control-kirki-toggle label .description {
   order: 99;
 }
-.customize-control-xirki-toggle .switch {
+.customize-control-kirki-toggle .switch {
   border: 1px solid #b4b9be;
   display: inline-block;
   width: 35px;
@@ -760,7 +760,7 @@
   user-select: none;
   transition: background 350ms ease;
 }
-.customize-control-xirki-toggle .switch:after, .customize-control-xirki-toggle .switch:before {
+.customize-control-kirki-toggle .switch:after, .customize-control-kirki-toggle .switch:before {
   content: "";
   display: block;
   width: 20px;
@@ -771,83 +771,83 @@
   left: -3px;
   transition: all 350ms cubic-bezier(0, 0.95, 0.38, 0.98), background 150ms ease;
 }
-.customize-control-xirki-toggle .switch:before {
+.customize-control-kirki-toggle .switch:before {
   background: rgba(0, 0, 0, 0.2);
   transform: translate3d(0, -50%, 0) scale(0);
 }
-.customize-control-xirki-toggle .switch:after {
+.customize-control-kirki-toggle .switch:after {
   background: #999;
   border: 1px solid rgba(0, 0, 0, 0.1);
   transform: translate3d(0, -50%, 0);
 }
-.customize-control-xirki-toggle .switch:active:before {
+.customize-control-kirki-toggle .switch:active:before {
   transform: translate3d(0, -50%, 0) scale(3);
 }
-.customize-control-xirki-toggle input:checked + .switch:before {
+.customize-control-kirki-toggle input:checked + .switch:before {
   background: rgba(0, 115, 170, 0.075);
   transform: translate3d(100%, -50%, 0) scale(1);
 }
-.customize-control-xirki-toggle input:checked + .switch:after {
+.customize-control-kirki-toggle input:checked + .switch:after {
   background: #0073aa;
   transform: translate3d(100%, -50%, 0);
 }
-.customize-control-xirki-toggle input:checked + .switch:active:before {
+.customize-control-kirki-toggle input:checked + .switch:active:before {
   background: rgba(0, 115, 170, 0.075);
   transform: translate3d(100%, -50%, 0) scale(3);
 }
 
-.customize-control-xirki-typography {
+.customize-control-kirki-typography {
   position: relative;
 }
-.customize-control-xirki-typography .wrapper {
+.customize-control-kirki-typography .wrapper {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.customize-control-xirki-typography .wrapper h5 {
+.customize-control-kirki-typography .wrapper h5 {
   margin: 0.67em 0 0;
 }
-.customize-control-xirki-typography .wrapper .color,
-.customize-control-xirki-typography .wrapper .font-backup,
-.customize-control-xirki-typography .wrapper .font-family,
-.customize-control-xirki-typography .wrapper .font-size,
-.customize-control-xirki-typography .wrapper .letter-spacing,
-.customize-control-xirki-typography .wrapper .line-height,
-.customize-control-xirki-typography .wrapper .margin-bottom,
-.customize-control-xirki-typography .wrapper .margin-top,
-.customize-control-xirki-typography .wrapper .text-align,
-.customize-control-xirki-typography .wrapper .text-transform,
-.customize-control-xirki-typography .wrapper .variant {
+.customize-control-kirki-typography .wrapper .color,
+.customize-control-kirki-typography .wrapper .font-backup,
+.customize-control-kirki-typography .wrapper .font-family,
+.customize-control-kirki-typography .wrapper .font-size,
+.customize-control-kirki-typography .wrapper .letter-spacing,
+.customize-control-kirki-typography .wrapper .line-height,
+.customize-control-kirki-typography .wrapper .margin-bottom,
+.customize-control-kirki-typography .wrapper .margin-top,
+.customize-control-kirki-typography .wrapper .text-align,
+.customize-control-kirki-typography .wrapper .text-transform,
+.customize-control-kirki-typography .wrapper .variant {
   width: 100%;
   float: none;
   clear: both;
 }
-.customize-control-xirki-typography .wrapper .font-size,
-.customize-control-xirki-typography .wrapper .letter-spacing,
-.customize-control-xirki-typography .wrapper .line-height,
-.customize-control-xirki-typography .wrapper .margin-bottom,
-.customize-control-xirki-typography .wrapper .margin-top,
-.customize-control-xirki-typography .wrapper .text-transform {
+.customize-control-kirki-typography .wrapper .font-size,
+.customize-control-kirki-typography .wrapper .letter-spacing,
+.customize-control-kirki-typography .wrapper .line-height,
+.customize-control-kirki-typography .wrapper .margin-bottom,
+.customize-control-kirki-typography .wrapper .margin-top,
+.customize-control-kirki-typography .wrapper .text-transform {
   width: 48%;
 }
-.customize-control-xirki-typography .wrapper .text-align .text-align-choices {
+.customize-control-kirki-typography .wrapper .text-align .text-align-choices {
   display: flex;
 }
-.customize-control-xirki-typography .wrapper .text-align .text-align-choices label {
+.customize-control-kirki-typography .wrapper .text-align .text-align-choices label {
   width: 100%;
   padding: 5px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0);
 }
-.customize-control-xirki-typography .wrapper .text-align .text-align-choices input {
+.customize-control-kirki-typography .wrapper .text-align .text-align-choices input {
   display: none;
 }
-.customize-control-xirki-typography .wrapper .text-align .text-align-choices input:checked + label {
+.customize-control-kirki-typography .wrapper .text-align .text-align-choices input:checked + label {
   border-color: #0085ba;
 }
-.customize-control-xirki-typography .wrapper .color {
+.customize-control-kirki-typography .wrapper .color {
   width: auto;
 }
 

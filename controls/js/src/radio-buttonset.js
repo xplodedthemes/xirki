@@ -1,1 +1,1 @@
-wp.customize.controlConstructor['xirki-radio-buttonset'] = wp.customize.xirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['kirki-radio-buttonset'] = wp.customize.kirkiDynamicControl.extend( {} );

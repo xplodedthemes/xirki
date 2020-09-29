@@ -1,4 +1,4 @@
-/* global xirkiControlLoader */
+/* global kirkiControlLoader */
 var RepeaterRow = function( rowIndex, container, label, control ) {
 
 	'use strict';
@@ -88,14 +88,14 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		var control = this;
 
 		// Init the control.
-		if ( ! _.isUndefined( window.xirkiControlLoader ) && _.isFunction( xirkiControlLoader ) ) {
-			xirkiControlLoader( control );
+		if ( ! _.isUndefined( window.kirkiControlLoader ) && _.isFunction( kirkiControlLoader ) ) {
+			kirkiControlLoader( control );
 		} else {
-			control.initXirkiControl();
+			control.initKirkiControl();
 		}
 	},
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		'use strict';
 
@@ -103,7 +103,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 			limit,
 			theNewRow;
 
-		// The current value set in Control Class (set in Xirki_Customize_Repeater_Control::to_json() function)
+		// The current value set in Control Class (set in Kirki_Customize_Repeater_Control::to_json() function)
 		var settingValue = this.params.value;
 
 		// The hidden field that keeps the data saved (though we never update it)
@@ -464,7 +464,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		var $targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-cropped_image' );
 
-		$targetDiv.find( '.xirki-image-attachment' ).html( '<img src="' + attachment.url + '">' ).hide().slideDown( 'slow' );
+		$targetDiv.find( '.kirki-image-attachment' ).html( '<img src="' + attachment.url + '">' ).hide().slideDown( 'slow' );
 
 		$targetDiv.find( '.hidden-field' ).val( attachment.id );
 		this.$thisButton.text( this.$thisButton.data( 'alt-label' ) );
@@ -487,7 +487,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		var $targetDiv = this.$thisButton.closest( '.repeater-field-upload' );
 
-		$targetDiv.find( '.xirki-file-attachment' ).html( '<span class="file"><span class="dashicons dashicons-media-default"></span> ' + attachment.filename + '</span>' ).hide().slideDown( 'slow' );
+		$targetDiv.find( '.kirki-file-attachment' ).html( '<span class="file"><span class="dashicons dashicons-media-default"></span> ' + attachment.filename + '</span>' ).hide().slideDown( 'slow' );
 
 		$targetDiv.find( '.hidden-field' ).val( attachment.id );
 		this.$thisButton.text( this.$thisButton.data( 'alt-label' ) );
@@ -539,7 +539,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		$targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-cropped_image,.repeater-field-upload' );
 		$uploadButton = $targetDiv.find( '.upload-button' );
 
-		$targetDiv.find( '.xirki-image-attachment' ).slideUp( 'fast', function() {
+		$targetDiv.find( '.kirki-image-attachment' ).slideUp( 'fast', function() {
 			jQuery( this ).show().html( jQuery( this ).data( 'placeholder' ) );
 		} );
 		$targetDiv.find( '.hidden-field' ).val( '' );
@@ -564,7 +564,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		$targetDiv = this.$thisButton.closest( '.repeater-field-upload' );
 		$uploadButton = $targetDiv.find( '.upload-button' );
 
-		$targetDiv.find( '.xirki-file-attachment' ).slideUp( 'fast', function() {
+		$targetDiv.find( '.kirki-file-attachment' ).slideUp( 'fast', function() {
 			jQuery( this ).show().html( jQuery( this ).data( 'placeholder' ) );
 		} );
 		$targetDiv.find( '.hidden-field' ).val( '' );
@@ -638,7 +638,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		'use strict';
 
 		var control       = this,
-			template      = control.repeaterTemplate(), // The template for the new row (defined on Xirki_Customize_Repeater_Control::render_content() ).
+			template      = control.repeaterTemplate(), // The template for the new row (defined on Kirki_Customize_Repeater_Control::render_content() ).
 			settingValue  = this.getValue(), // Get the current setting value.
 			newRowSetting = {}, // Saves the new setting data.
 			templateData, // Data to pass to the template

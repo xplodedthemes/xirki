@@ -2,7 +2,7 @@
 /**
  * Customizer controls underscore.js template.
  *
- * @package     Xirki
+ * @package     Kirki
  * @subpackage  Controls
  * @copyright   Copyright (c) 2020, David Vongries
  * @license     https://opensource.org/licenses/MIT
@@ -21,7 +21,7 @@
 } );
 #>
 
-<div class="xirki-input-container" data-id="' + data.id + '">
+<div class="kirki-input-container" data-id="' + data.id + '">
 	<# if ( data.label ) { #>
 		<span class="customize-control-title">{{{ data.label }}}</span>
 	<# } #>

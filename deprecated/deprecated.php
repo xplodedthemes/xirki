@@ -4,9 +4,9 @@
  *
  * We could easily delete all these but they are kept for backwards-compatibility purposes.
  *
- * @package     Xirki
+ * @package     Kirki
  * @category    Core
- * @author      XplodedThemes (@XplodedThemes)
+ * @author      Ari Stathopoulos (@aristath)
  * @copyright   Copyright (c) 2020, David Vongries
  * @license     https://opensource.org/licenses/MIT
  * @since       1.0

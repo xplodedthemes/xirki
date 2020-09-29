@@ -1,11 +1,11 @@
 /* global tinyMCE */
-wp.customize.controlConstructor['xirki-editor'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-editor'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this,
 			element = control.container.find( 'textarea' ),
-			id      = 'xirki-editor-' + control.id.replace( '[', '' ).replace( ']', '' ),
+			id      = 'kirki-editor-' + control.id.replace( '[', '' ).replace( ']', '' ),
 			editor;
 
 		if ( wp.editor && wp.editor.initialize ) {
