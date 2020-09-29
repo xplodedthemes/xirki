@@ -7,7 +7,7 @@ jQuery( document ).ready( function() {
 			sectionLi = jQuery( '#accordion-section-' + section.id );
 
 		// Check if the section is expanded.
-		if ( sectionLi.hasClass( 'control-section-kirki-expanded' ) ) {
+		if ( sectionLi.hasClass( 'control-section-xirki-expanded' ) ) {
 
 			// Move element.
 			pane.appendTo( sectionLi );
@@ -21,7 +21,7 @@ jQuery( document ).ready( function() {
  * See https://github.com/justintadlock/trt-customizer-pro
  */
 ( function() {
-	wp.customize.sectionConstructor['kirki-link'] = wp.customize.Section.extend( {
+	wp.customize.sectionConstructor['xirki-link'] = wp.customize.Section.extend( {
 		attachEvents: function() {},
 		isContextuallyActive: function() {
 			return true;
@@ -49,7 +49,7 @@ jQuery( document ).ready( function() {
 		// Reflow Sections.
 		wp.customize.section.each( function( section ) {
 
-			if ( 'kirki-nested' !== section.params.type || _.isUndefined( section.params.section ) ) {
+			if ( 'xirki-nested' !== section.params.type || _.isUndefined( section.params.section ) ) {
 				return;
 			}
 			sections.push( section );
@@ -65,7 +65,7 @@ jQuery( document ).ready( function() {
 
 		// Reflow Panels.
 		wp.customize.panel.each( function( panel ) {
-			if ( 'kirki-nested' !== panel.params.type || _.isUndefined( panel.params.panel ) ) {
+			if ( 'xirki-nested' !== panel.params.type || _.isUndefined( panel.params.panel ) ) {
 				return;
 			}
 			panels.push( panel );
@@ -89,7 +89,7 @@ jQuery( document ).ready( function() {
 		attachEvents: function() {
 			var panel;
 
-			if ( 'kirki-nested' !== this.params.type || _.isUndefined( this.params.panel ) ) {
+			if ( 'xirki-nested' !== this.params.type || _.isUndefined( this.params.panel ) ) {
 				_panelAttachEvents.call( this );
 				return;
 			}
@@ -124,7 +124,7 @@ jQuery( document ).ready( function() {
 
 			var panel = this,
 				parentContainer;
-			if ( 'kirki-nested' !== this.params.type || _.isUndefined( this.params.panel ) ) {
+			if ( 'xirki-nested' !== this.params.type || _.isUndefined( this.params.panel ) ) {
 				_panelEmbed.call( this );
 				return;
 			}
@@ -142,7 +142,7 @@ jQuery( document ).ready( function() {
 				children,
 				activeCount = 0;
 
-			if ( 'kirki-nested' !== this.params.type ) {
+			if ( 'xirki-nested' !== this.params.type ) {
 				return _panelIsContextuallyActive.call( this );
 			}
 
@@ -181,7 +181,7 @@ jQuery( document ).ready( function() {
 
 			var section = this;
 
-			if ( 'kirki-nested' !== this.params.type || _.isUndefined( this.params.section ) ) {
+			if ( 'xirki-nested' !== this.params.type || _.isUndefined( this.params.section ) ) {
 				_sectionAttachEvents.call( section );
 				return;
 			}
@@ -214,7 +214,7 @@ jQuery( document ).ready( function() {
 			var section = this,
 				parentContainer;
 
-			if ( 'kirki-nested' !== this.params.type || _.isUndefined( this.params.section ) ) {
+			if ( 'xirki-nested' !== this.params.type || _.isUndefined( this.params.section ) ) {
 				_sectionEmbed.call( section );
 				return;
 			}
@@ -230,7 +230,7 @@ jQuery( document ).ready( function() {
 			var section = this,
 				children,
 				activeCount = 0;
-			if ( 'kirki-nested' !== this.params.type ) {
+			if ( 'xirki-nested' !== this.params.type ) {
 				return _sectionIsContextuallyActive.call( this );
 			}
 

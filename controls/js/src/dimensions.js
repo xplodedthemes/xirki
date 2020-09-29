@@ -1,7 +1,7 @@
-/* global dimensionskirkiL10n */
-wp.customize.controlConstructor['kirki-dimensions'] = wp.customize.kirkiDynamicControl.extend( {
+/* global dimensionsxirkiL10n */
+wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicControl.extend( {
 
-	initKirkiControl: function() {
+	initXirkiControl: function() {
 
 		var control     = this,
 			subControls = control.params.choices.controls,
@@ -32,7 +32,7 @@ wp.customize.controlConstructor['kirki-dimensions'] = wp.customize.kirkiDynamicC
 			value[ context ] = jQuery( this ).val();
 
 			// Notifications.
-			control.kirkiNotifications();
+			control.xirkiNotifications();
 
 			// Save the value
 			control.saveValue( value );
@@ -57,7 +57,7 @@ wp.customize.controlConstructor['kirki-dimensions'] = wp.customize.kirkiDynamicC
 	/**
 	 * Handles notifications.
 	 */
-	kirkiNotifications: function() {
+	xirkiNotifications: function() {
 
 		var control = this;
 
@@ -70,7 +70,7 @@ wp.customize.controlConstructor['kirki-dimensions'] = wp.customize.kirkiDynamicC
 				setting.notifications.remove( code );
 
 				_.each( value, function( val, direction ) {
-					if ( false === kirki.util.validate.cssValue( val ) ) {
+					if ( false === xirki.util.validate.cssValue( val ) ) {
 						subs[ direction ] = val;
 					} else {
 						delete subs[ direction ];
@@ -78,7 +78,7 @@ wp.customize.controlConstructor['kirki-dimensions'] = wp.customize.kirkiDynamicC
 				} );
 
 				if ( ! _.isEmpty( subs ) ) {
-					message = dimensionskirkiL10n['invalid-value'] + ' (' + _.values( subs ).toString() + ') ';
+					message = dimensionsxirkiL10n['invalid-value'] + ' (' + _.values( subs ).toString() + ') ';
 					setting.notifications.add( code, new wp.customize.Notification( code, {
 						type: 'warning',
 						message: message

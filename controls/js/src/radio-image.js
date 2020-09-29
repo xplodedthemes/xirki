@@ -1,1 +1,1 @@
-wp.customize.controlConstructor['kirki-radio-image'] = wp.customize.kirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['xirki-radio-image'] = wp.customize.xirkiDynamicControl.extend( {} );

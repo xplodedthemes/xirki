@@ -15,9 +15,9 @@ jQuery( document ).ready( function() {
 
 	// Listen for post
 	self.queriedPost.bind( function( newPost, oldPost ) {
-		window.kirkiPost = false;
+		window.xirkiPost = false;
 		if ( newPost || oldPost ) {
-			window.kirkiPost = ( newPost ) ? newPost : oldPost;
+			window.xirkiPost = ( newPost ) ? newPost : oldPost;
 		}
 	} );
 } );
