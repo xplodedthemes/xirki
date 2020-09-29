@@ -1,4 +1,4 @@
-/* global xirki */
+/* global kirki */
 /**
  * The majority of the code in this file
  * is derived from the wp-customize-posts plugin
@@ -17,7 +17,7 @@
 	 * @augments wp.customize.Control
 	 * @augments wp.customize.Class
 	 */
-	wp.customize.xirkiDynamicControl = wp.customize.Control.extend( {
+	wp.customize.kirkiDynamicControl = wp.customize.Control.extend( {
 
 		initialize: function( id, options ) {
 			var control = this,
@@ -25,7 +25,7 @@
 
 			args.params = args.params || {};
 			if ( ! args.params.type ) {
-				args.params.type = 'xirki-generic';
+				args.params.type = 'kirki-generic';
 			}
 			if ( ! args.params.content ) {
 				args.params.content = jQuery( '<li></li>' );
@@ -116,7 +116,7 @@
 			wp.customize.Control.prototype.ready.call( control );
 
 			control.deferred.embedded.done( function() {
-				control.initXirkiControl( control );
+				control.initKirkiControl( control );
 			} );
 		},
 
@@ -138,7 +138,7 @@
 			}
 
 			wp.customize.section( sectionId, function( section ) {
-				if ( 'xirki-expanded' === section.params.type || section.expanded() || wp.customize.settings.autofocus.control === control.id ) {
+				if ( 'kirki-expanded' === section.params.type || section.expanded() || wp.customize.settings.autofocus.control === control.id ) {
 					control.actuallyEmbed();
 				} else {
 					section.expanded.bind( function( expanded ) {
@@ -185,9 +185,9 @@
 		 * @param {object} [args] Args.
 		 * @returns {null}
 		 */
-		initXirkiControl: function( control ) {
-			if ( 'undefined' !== typeof xirki.control[ control.params.type ] ) {
-				xirki.control[ control.params.type ].init( control );
+		initKirkiControl: function( control ) {
+			if ( 'undefined' !== typeof kirki.control[ control.params.type ] ) {
+				kirki.control[ control.params.type ].init( control );
 				return;
 			}
 
@@ -198,6 +198,6 @@
 		}
 	} );
 }() );
-_.each( xirki.control, function( obj, type ) {
-	wp.customize.controlConstructor[ type ] = wp.customize.xirkiDynamicControl.extend( {} );
+_.each( kirki.control, function( obj, type ) {
+	wp.customize.controlConstructor[ type ] = wp.customize.kirkiDynamicControl.extend( {} );
 } );

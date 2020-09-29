@@ -1,6 +1,6 @@
-wp.customize.controlConstructor['xirki-multicheck'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-multicheck'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this;
 

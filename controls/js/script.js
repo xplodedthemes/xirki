@@ -1,7 +1,7 @@
 /* jshint -W079 */
 /* jshint unused:false */
-if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
-	var xirkiSetSettingValue = { // eslint-disable-line vars-on-top
+if ( _.isUndefined( window.kirkiSetSettingValue ) ) {
+	var kirkiSetSettingValue = { // eslint-disable-line vars-on-top
 
 		/**
 		 * Set the value of the control.
@@ -32,9 +32,9 @@ if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
 			// Process visually changing the value based on the control type.
 			switch ( subControl.type ) {
 
-				case 'xirki-background':
+				case 'kirki-background':
 					if ( ! _.isUndefined( value['background-color'] ) ) {
-						$this.setColorPicker( $this.findElement( setting, '.xirki-color-control' ), value['background-color'] );
+						$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value['background-color'] );
 					}
 					$this.findElement( setting, '.placeholder, .thumbnail' ).removeClass().addClass( 'placeholder' ).html( 'No file selected' );
 					_.each( [ 'background-repeat', 'background-position' ], function( subVal ) {
@@ -49,39 +49,39 @@ if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
 					jQuery( $this.findElement( setting, '.background-hidden-value' ).attr( 'value', valueJSON ) ).trigger( 'change' );
 					break;
 
-				case 'xirki-code':
+				case 'kirki-code':
 					jQuery( $this.findElement( setting, '.CodeMirror' ) )[0].CodeMirror.setValue( value );
 					break;
 
 				case 'checkbox':
-				case 'xirki-switch':
-				case 'xirki-toggle':
+				case 'kirki-switch':
+				case 'kirki-toggle':
 					value = ( 1 === value || '1' === value || true === value ) ? true : false;
 					jQuery( $this.findElement( setting, 'input' ) ).prop( 'checked', value );
 					wp.customize.instance( setting ).set( value );
 					break;
 
-				case 'xirki-select':
+				case 'kirki-select':
 					$this.setSelectWoo( $this.findElement( setting, 'select' ), value );
 					break;
 
-				case 'xirki-slider':
+				case 'kirki-slider':
 					jQuery( $this.findElement( setting, 'input' ) ).prop( 'value', value );
-					jQuery( $this.findElement( setting, '.xirki_range_value .value' ) ).html( value );
+					jQuery( $this.findElement( setting, '.kirki_range_value .value' ) ).html( value );
 					break;
 
-				case 'xirki-generic':
+				case 'kirki-generic':
 					if ( _.isUndefined( subControl.choices ) || _.isUndefined( subControl.choices.element ) ) {
 						subControl.choices.element = 'input';
 					}
 					jQuery( $this.findElement( setting, subControl.choices.element ) ).prop( 'value', value );
 					break;
 
-				case 'xirki-color':
-					$this.setColorPicker( $this.findElement( setting, '.xirki-color-control' ), value );
+				case 'kirki-color':
+					$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value );
 					break;
 
-				case 'xirki-multicheck':
+				case 'kirki-multicheck':
 					$this.findElement( setting, 'input' ).each( function() {
 						jQuery( this ).prop( 'checked', false );
 					} );
@@ -90,22 +90,22 @@ if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
 					} );
 					break;
 
-				case 'xirki-multicolor':
+				case 'kirki-multicolor':
 					_.each( value, function( subVal, index ) {
 						$this.setColorPicker( $this.findElement( setting, '.multicolor-index-' + index ), subVal );
 					} );
 					break;
 
-				case 'xirki-radio-buttonset':
-				case 'xirki-radio-image':
-				case 'xirki-radio':
-				case 'xirki-dashicons':
-				case 'xirki-color-palette':
-				case 'xirki-palette':
+				case 'kirki-radio-buttonset':
+				case 'kirki-radio-image':
+				case 'kirki-radio':
+				case 'kirki-dashicons':
+				case 'kirki-color-palette':
+				case 'kirki-palette':
 					jQuery( $this.findElement( setting, 'input[value="' + value + '"]' ) ).prop( 'checked', true );
 					break;
 
-				case 'xirki-typography':
+				case 'kirki-typography':
 					_.each( [ 'font-family', 'variant' ], function( subVal ) {
 						if ( ! _.isUndefined( value[ subVal ] ) ) {
 							$this.setSelectWoo( $this.findElement( setting, '.' + subVal + ' select' ), value[ subVal ] );
@@ -118,24 +118,24 @@ if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
 					} );
 
 					if ( ! _.isUndefined( value.color ) ) {
-						$this.setColorPicker( $this.findElement( setting, '.xirki-color-control' ), value.color );
+						$this.setColorPicker( $this.findElement( setting, '.kirki-color-control' ), value.color );
 					}
 					valueJSON = JSON.stringify( value ).replace( /'/g, '&#39' );
 					jQuery( $this.findElement( setting, '.typography-hidden-value' ).attr( 'value', valueJSON ) ).trigger( 'change' );
 					break;
 
-				case 'xirki-dimensions':
+				case 'kirki-dimensions':
 					_.each( value, function( subValue, id ) {
 						jQuery( $this.findElement( setting, '.' + id + ' input' ) ).prop( 'value', subValue );
 					} );
 					break;
 
-				case 'xirki-repeater':
+				case 'kirki-repeater':
 
 					// Not yet implemented.
 					break;
 
-				case 'xirki-custom':
+				case 'kirki-custom':
 
 					// Do nothing.
 					break;
@@ -207,7 +207,7 @@ if ( _.isUndefined( window.xirkiSetSettingValue ) ) {
 		}
 	};
 }
-var xirki = {
+var kirki = {
 
 	initialized: false,
 
@@ -226,8 +226,8 @@ var xirki = {
 		}
 
 		setTimeout( function() {
-			xirki.util.webfonts.standard.initialize();
-			xirki.util.webfonts.google.initialize();
+			kirki.util.webfonts.standard.initialize();
+			kirki.util.webfonts.google.initialize();
 		}, 150 );
 
 		// Mark as initialized.
@@ -235,10 +235,10 @@ var xirki = {
 	}
 };
 
-// Initialize the xirki object.
-xirki.initialize();
-var xirki = xirki || {};
-xirki = jQuery.extend( xirki, {
+// Initialize the kirki object.
+kirki.initialize();
+var kirki = kirki || {};
+kirki = jQuery.extend( kirki, {
 
 	/**
 	 * An object containing definitions for controls.
@@ -252,7 +252,7 @@ xirki = jQuery.extend( xirki, {
 		 *
 		 * @since 3.0.17
 		 */
-		'xirki-radio': {
+		'kirki-radio': {
 
 			/**
 			 * Init the control.
@@ -268,7 +268,7 @@ xirki = jQuery.extend( xirki, {
 				self.template( control );
 
 				// Init the control.
-				xirki.input.radio.init( control );
+				kirki.input.radio.init( control );
 
 			},
 
@@ -287,14 +287,14 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			template: function( control ) {
-				var template = wp.template( 'xirki-input-radio' );
+				var template = wp.template( 'kirki-input-radio' );
 				control.container.html( template( {
 					label: control.params.label,
 					description: control.params.description,
 					'data-id': control.id,
 					inputAttrs: control.params.inputAttrs,
 					'default': control.params.default,
-					value: xirki.setting.get( control.id ),
+					value: kirki.setting.get( control.id ),
 					choices: control.params.choices
 				} ) );
 			}
@@ -305,7 +305,7 @@ xirki = jQuery.extend( xirki, {
 		 *
 		 * @since 3.0.16
 		 */
-		'xirki-color': {
+		'kirki-color': {
 
 			/**
 			 * Init the control.
@@ -321,7 +321,7 @@ xirki = jQuery.extend( xirki, {
 				self.template( control );
 
 				// Init the control.
-				xirki.input.color.init( control );
+				kirki.input.color.init( control );
 
 			},
 
@@ -345,7 +345,7 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			template: function( control ) {
-				var template = wp.template( 'xirki-input-color' );
+				var template = wp.template( 'kirki-input-color' );
 				control.container.html( template( {
 					label: control.params.label,
 					description: control.params.description,
@@ -355,7 +355,7 @@ xirki = jQuery.extend( xirki, {
 					'data-palette': control.params.palette,
 					'data-default-color': control.params.default,
 					'data-alpha': control.params.choices.alpha,
-					value: xirki.setting.get( control.id )
+					value: kirki.setting.get( control.id )
 				} ) );
 			}
 		},
@@ -365,7 +365,7 @@ xirki = jQuery.extend( xirki, {
 		 *
 		 * @since 3.0.16
 		 */
-		'xirki-generic': {
+		'kirki-generic': {
 
 			/**
 			 * Init the control.
@@ -385,10 +385,10 @@ xirki = jQuery.extend( xirki, {
 
 				// Init the control.
 				if ( ! _.isUndefined( control.params ) && ! _.isUndefined( control.params.choices ) && ! _.isUndefined( control.params.choices.element ) && 'textarea' === control.params.choices.element ) {
-					xirki.input.textarea.init( control );
+					kirki.input.textarea.init( control );
 					return;
 				}
-				xirki.input.genericInput.init( control );
+				kirki.input.genericInput.init( control );
 			},
 
 			/**
@@ -413,16 +413,16 @@ xirki = jQuery.extend( xirki, {
 						'data-id': control.id,
 						inputAttrs: control.params.inputAttrs,
 						choices: control.params.choices,
-						value: xirki.setting.get( control.id )
+						value: kirki.setting.get( control.id )
 					},
 					template;
 
 				if ( ! _.isUndefined( control.params ) && ! _.isUndefined( control.params.choices ) && ! _.isUndefined( control.params.choices.element ) && 'textarea' === control.params.choices.element ) {
-					template = wp.template( 'xirki-input-textarea' );
+					template = wp.template( 'kirki-input-textarea' );
 					control.container.html( template( args ) );
 					return;
 				}
-				template = wp.template( 'xirki-input-generic' );
+				template = wp.template( 'kirki-input-generic' );
 				control.container.html( template( args ) );
 			}
 		},
@@ -432,7 +432,7 @@ xirki = jQuery.extend( xirki, {
 		 *
 		 * @since 3.0.26
 		 */
-		'xirki-number': {
+		'kirki-number': {
 
 			/**
 			 * Init the control.
@@ -448,7 +448,7 @@ xirki = jQuery.extend( xirki, {
 				self.template( control );
 
 				// Init the control.
-				xirki.input.number.init( control );
+				kirki.input.number.init( control );
 			},
 
 			/**
@@ -466,7 +466,7 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			template: function( control ) {
-				var template = wp.template( 'xirki-input-number' );
+				var template = wp.template( 'kirki-input-number' );
 
 				control.container.html(
 					template( args = {
@@ -475,7 +475,7 @@ xirki = jQuery.extend( xirki, {
 						'data-id': control.id,
 						inputAttrs: control.params.inputAttrs,
 						choices: control.params.choices,
-						value: xirki.setting.get( control.id )
+						value: kirki.setting.get( control.id )
 					} )
 				);
 			}
@@ -486,7 +486,7 @@ xirki = jQuery.extend( xirki, {
 		 *
 		 * @since 3.0.34
 		 */
-		'xirki-image': {
+		'kirki-image': {
 
 			/**
 			 * Init the control.
@@ -502,7 +502,7 @@ xirki = jQuery.extend( xirki, {
 				self.template( control );
 
 				// Init the control.
-				xirki.input.image.init( control );
+				kirki.input.image.init( control );
 			},
 
 			/**
@@ -520,7 +520,7 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			template: function( control ) {
-				var template = wp.template( 'xirki-input-image' );
+				var template = wp.template( 'kirki-input-image' );
 
 				control.container.html(
 					template( args = {
@@ -529,13 +529,13 @@ xirki = jQuery.extend( xirki, {
 						'data-id': control.id,
 						inputAttrs: control.params.inputAttrs,
 						choices: control.params.choices,
-						value: xirki.setting.get( control.id )
+						value: kirki.setting.get( control.id )
 					} )
 				);
 			}
 		},
 
-		'xirki-select': {
+		'kirki-select': {
 
 			/**
 			 * Init the control.
@@ -551,7 +551,7 @@ xirki = jQuery.extend( xirki, {
 				self.template( control );
 
 				// Init the control.
-				xirki.input.select.init( control );
+				kirki.input.select.init( control );
 			},
 
 			/**
@@ -569,7 +569,7 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			template: function( control ) {
-				var template = wp.template( 'xirki-input-select' );
+				var template = wp.template( 'kirki-input-select' );
 
 				control.container.html( template( {
 					label: control.params.label,
@@ -577,7 +577,7 @@ xirki = jQuery.extend( xirki, {
 					'data-id': control.id,
 					inputAttrs: control.params.inputAttrs,
 					choices: control.params.choices,
-					value: xirki.setting.get( control.id ),
+					value: kirki.setting.get( control.id ),
 					multiple: control.params.multiple || 1,
 					placeholder: control.params.placeholder
 				} ) );
@@ -585,9 +585,9 @@ xirki = jQuery.extend( xirki, {
 		}
 	}
 } );
-/* global xirkiL10n */
-var xirki = xirki || {};
-xirki = jQuery.extend( xirki, {
+/* global kirkiL10n */
+var kirki = kirki || {};
+kirki = jQuery.extend( kirki, {
 
 	/**
 	 * An object containing definitions for input fields.
@@ -616,7 +616,7 @@ xirki = jQuery.extend( xirki, {
 
 				// Save the value
 				input.on( 'change keyup paste click', function() {
-					xirki.setting.set( control.id, jQuery( this ).val() );
+					kirki.setting.set( control.id, jQuery( this ).val() );
 				} );
 			}
 		},
@@ -641,7 +641,7 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			init: function( control ) {
-				var picker = jQuery( '.xirki-color-control[data-id="' + control.id + '"]' ),
+				var picker = jQuery( '.kirki-color-control[data-id="' + control.id + '"]' ),
 					clear;
 
 				control.choices = control.choices || {};
@@ -656,10 +656,10 @@ xirki = jQuery.extend( xirki, {
 
 				// Tweaks to make the "clear" buttons work.
 				setTimeout( function() {
-					clear = jQuery( '.xirki-input-container[data-id="' + control.id + '"] .wp-picker-clear' );
+					clear = jQuery( '.kirki-input-container[data-id="' + control.id + '"] .wp-picker-clear' );
 					if ( clear.length ) {
 						clear.click( function() {
-							xirki.setting.set( control.id, '' );
+							kirki.setting.set( control.id, '' );
 						} );
 					}
 				}, 200 );
@@ -670,7 +670,7 @@ xirki = jQuery.extend( xirki, {
 
 						// Small hack: the picker needs a small delay
 						setTimeout( function() {
-							xirki.setting.set( control.id, picker.val() );
+							kirki.setting.set( control.id, picker.val() );
 						}, 20 );
 					}
 				} );
@@ -697,7 +697,7 @@ xirki = jQuery.extend( xirki, {
 
 				// Save the value
 				input.on( 'change keyup paste click', function() {
-					xirki.setting.set( control.id, jQuery( this ).val() );
+					kirki.setting.set( control.id, jQuery( this ).val() );
 				} );
 			}
 		},
@@ -722,7 +722,7 @@ xirki = jQuery.extend( xirki, {
 
 				// Save the value
 				textarea.on( 'change keyup paste click', function() {
-					xirki.setting.set( control.id, jQuery( this ).val() );
+					kirki.setting.set( control.id, jQuery( this ).val() );
 				} );
 			}
 		},
@@ -757,7 +757,7 @@ xirki = jQuery.extend( xirki, {
 				jQuery( element ).selectWoo( selectWooOptions ).on( 'change', function() {
 					selectValue = jQuery( this ).val();
 					selectValue = ( null === selectValue && 1 < multiple ) ? [] : selectValue;
-					xirki.setting.set( control.id, selectValue );
+					kirki.setting.set( control.id, selectValue );
 				} );
 			}
 		},
@@ -805,8 +805,8 @@ xirki = jQuery.extend( xirki, {
 				control.params.choices.max  = parseFloat( control.params.choices.max );
 				control.params.choices.step = parseFloat( control.params.choices.step );
 
-				up   = jQuery( '.xirki-input-container[data-id="' + control.id + '"] .plus' );
-				down = jQuery( '.xirki-input-container[data-id="' + control.id + '"] .minus' );
+				up   = jQuery( '.kirki-input-container[data-id="' + control.id + '"] .plus' );
+				down = jQuery( '.kirki-input-container[data-id="' + control.id + '"] .minus' );
 
 				up.click( function() {
 					var oldVal = parseFloat( element.val() ),
@@ -835,7 +835,7 @@ xirki = jQuery.extend( xirki, {
 						val = ( isNaN( val ) ) ? 0 : val;
 						jQuery( this ).attr( 'value', val );
 					}
-					xirki.setting.set( control.id, val );
+					kirki.setting.set( control.id, val );
 				} );
 			}
 
@@ -856,7 +856,7 @@ xirki = jQuery.extend( xirki, {
 			 * @returns {null}
 			 */
 			init: function( control ) {
-				var value         = xirki.setting.get( control.id ),
+				var value         = kirki.setting.get( control.id ),
 					saveAs        = ( ! _.isUndefined( control.params.choices ) && ! _.isUndefined( control.params.choices.save_as ) ) ? control.params.choices.save_as : 'url',
 					preview       = control.container.find( '.placeholder, .thumbnail' ),
 					previewImage  = ( 'array' === saveAs ) ? value.url : value,
@@ -913,16 +913,16 @@ xirki = jQuery.extend( xirki, {
 						}
 
 						if ( 'array' === saveAs ) {
-							xirki.setting.set( control.id, {
+							kirki.setting.set( control.id, {
 								id: jsonImg.id,
 								url: jsonImg.sizes.full.url,
 								width: jsonImg.width,
 								height: jsonImg.height
 							} );
 						} else if ( 'id' === saveAs ) {
-							xirki.setting.set( control.id, jsonImg.id );
+							kirki.setting.set( control.id, jsonImg.id );
 						} else {
-							xirki.setting.set( control.id, ( ( ! _.isUndefined( jsonImg.sizes ) ) ? jsonImg.sizes.full.url : jsonImg.url ) );
+							kirki.setting.set( control.id, ( ( ! _.isUndefined( jsonImg.sizes ) ) ? jsonImg.sizes.full.url : jsonImg.url ) );
 						}
 
 						if ( preview.length ) {
@@ -945,14 +945,14 @@ xirki = jQuery.extend( xirki, {
 
 					e.preventDefault();
 
-					xirki.setting.set( control.id, '' );
+					kirki.setting.set( control.id, '' );
 
 					preview       = control.container.find( '.placeholder, .thumbnail' );
 					removeButton  = control.container.find( '.image-upload-remove-button' );
 					defaultButton = control.container.find( '.image-default-button' );
 
 					if ( preview.length ) {
-						preview.removeClass().addClass( 'placeholder' ).html( xirkiL10n.noFileSelected );
+						preview.removeClass().addClass( 'placeholder' ).html( kirkiL10n.noFileSelected );
 					}
 					if ( removeButton.length ) {
 						removeButton.hide();
@@ -970,7 +970,7 @@ xirki = jQuery.extend( xirki, {
 
 					e.preventDefault();
 
-					xirki.setting.set( control.id, control.params.default );
+					kirki.setting.set( control.id, control.params.default );
 
 					preview       = control.container.find( '.placeholder, .thumbnail' );
 					removeButton  = control.container.find( '.image-upload-remove-button' );
@@ -988,8 +988,8 @@ xirki = jQuery.extend( xirki, {
 		}
 	}
 } );
-var xirki = xirki || {};
-xirki = jQuery.extend( xirki, {
+var kirki = kirki || {};
+kirki = jQuery.extend( kirki, {
 
 	/**
 	 * An object containing definitions for settings.
@@ -1142,8 +1142,8 @@ xirki = jQuery.extend( xirki, {
 	}
 } );
 /* global ajaxurl */
-var xirki = xirki || {};
-xirki = jQuery.extend( xirki, {
+var kirki = kirki || {};
+kirki = jQuery.extend( kirki, {
 
 	/**
 	 * A collection of utility methods.
@@ -1202,7 +1202,7 @@ xirki = jQuery.extend( xirki, {
 					}
 
 					// Make an AJAX call to set the fonts object (alpha).
-					jQuery.post( ajaxurl, { 'action': 'xirki_fonts_google_all_get' }, function( response ) {
+					jQuery.post( ajaxurl, { 'action': 'kirki_fonts_google_all_get' }, function( response ) {
 
 						// Get fonts from the JSON array.
 						self.fonts = JSON.parse( response );
@@ -1348,7 +1348,7 @@ xirki = jQuery.extend( xirki, {
 					}
 
 					// Make an AJAX call to set the fonts object.
-					jQuery.post( ajaxurl, { 'action': 'xirki_fonts_standard_all_get' }, function( response ) {
+					jQuery.post( ajaxurl, { 'action': 'kirki_fonts_standard_all_get' }, function( response ) {
 
 						// Get fonts from the JSON array.
 						self.fonts = JSON.parse( response );
@@ -1451,7 +1451,7 @@ xirki = jQuery.extend( xirki, {
 		}
 	}
 } );
-/* global xirki */
+/* global kirki */
 /**
  * The majority of the code in this file
  * is derived from the wp-customize-posts plugin
@@ -1470,7 +1470,7 @@ xirki = jQuery.extend( xirki, {
 	 * @augments wp.customize.Control
 	 * @augments wp.customize.Class
 	 */
-	wp.customize.xirkiDynamicControl = wp.customize.Control.extend( {
+	wp.customize.kirkiDynamicControl = wp.customize.Control.extend( {
 
 		initialize: function( id, options ) {
 			var control = this,
@@ -1478,7 +1478,7 @@ xirki = jQuery.extend( xirki, {
 
 			args.params = args.params || {};
 			if ( ! args.params.type ) {
-				args.params.type = 'xirki-generic';
+				args.params.type = 'kirki-generic';
 			}
 			if ( ! args.params.content ) {
 				args.params.content = jQuery( '<li></li>' );
@@ -1569,7 +1569,7 @@ xirki = jQuery.extend( xirki, {
 			wp.customize.Control.prototype.ready.call( control );
 
 			control.deferred.embedded.done( function() {
-				control.initXirkiControl( control );
+				control.initKirkiControl( control );
 			} );
 		},
 
@@ -1591,7 +1591,7 @@ xirki = jQuery.extend( xirki, {
 			}
 
 			wp.customize.section( sectionId, function( section ) {
-				if ( 'xirki-expanded' === section.params.type || section.expanded() || wp.customize.settings.autofocus.control === control.id ) {
+				if ( 'kirki-expanded' === section.params.type || section.expanded() || wp.customize.settings.autofocus.control === control.id ) {
 					control.actuallyEmbed();
 				} else {
 					section.expanded.bind( function( expanded ) {
@@ -1638,9 +1638,9 @@ xirki = jQuery.extend( xirki, {
 		 * @param {object} [args] Args.
 		 * @returns {null}
 		 */
-		initXirkiControl: function( control ) {
-			if ( 'undefined' !== typeof xirki.control[ control.params.type ] ) {
-				xirki.control[ control.params.type ].init( control );
+		initKirkiControl: function( control ) {
+			if ( 'undefined' !== typeof kirki.control[ control.params.type ] ) {
+				kirki.control[ control.params.type ].init( control );
 				return;
 			}
 
@@ -1651,11 +1651,11 @@ xirki = jQuery.extend( xirki, {
 		}
 	} );
 }() );
-_.each( xirki.control, function( obj, type ) {
-	wp.customize.controlConstructor[ type ] = wp.customize.xirkiDynamicControl.extend( {} );
+_.each( kirki.control, function( obj, type ) {
+	wp.customize.controlConstructor[ type ] = wp.customize.kirkiDynamicControl.extend( {} );
 } );
-/* global xirkiControlLoader */
-wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.extend( {
+/* global kirkiControlLoader */
+wp.customize.controlConstructor['kirki-background'] = wp.customize.Control.extend( {
 
 	// When we're finished loading continue processing
 	ready: function() {
@@ -1665,18 +1665,18 @@ wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.exten
 		var control = this;
 
 		// Init the control.
-		if ( ! _.isUndefined( window.xirkiControlLoader ) && _.isFunction( xirkiControlLoader ) ) {
-			xirkiControlLoader( control );
+		if ( ! _.isUndefined( window.kirkiControlLoader ) && _.isFunction( kirkiControlLoader ) ) {
+			kirkiControlLoader( control );
 		} else {
-			control.initXirkiControl();
+			control.initKirkiControl();
 		}
 	},
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this,
 			value   = control.setting._value,
-			picker  = control.container.find( '.xirki-color-control' );
+			picker  = control.container.find( '.kirki-color-control' );
 
 		// Hide unnecessary controls if the value doesn't have an image.
 		if ( _.isUndefined( value['background-image'] ) || '' === value['background-image'] ) {
@@ -1802,11 +1802,11 @@ wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.exten
 		control.setting.set( val );
 	}
 } );
-wp.customize.controlConstructor['xirki-color-palette'] = wp.customize.xirkiDynamicControl.extend( {} );
-wp.customize.controlConstructor['xirki-dashicons'] = wp.customize.xirkiDynamicControl.extend( {} );
-wp.customize.controlConstructor['xirki-date'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-color-palette'] = wp.customize.kirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['kirki-dashicons'] = wp.customize.kirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['kirki-date'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 		var control  = this,
 			selector = control.selector + ' input.datepicker';
 
@@ -1821,16 +1821,16 @@ wp.customize.controlConstructor['xirki-date'] = wp.customize.xirkiDynamicControl
 		} );
 	}
 } );
-/* global dimensionxirkiL10n */
-wp.customize.controlConstructor['xirki-dimension'] = wp.customize.xirkiDynamicControl.extend( {
+/* global dimensionkirkiL10n */
+wp.customize.controlConstructor['kirki-dimension'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this,
 			value;
 
 		// Notifications.
-		control.xirkiNotifications();
+		control.kirkiNotifications();
 
 		// Save the value
 		this.container.on( 'change keyup paste', 'input', function() {
@@ -1843,7 +1843,7 @@ wp.customize.controlConstructor['xirki-dimension'] = wp.customize.xirkiDynamicCo
 	/**
 	 * Handles notifications.
 	 */
-	xirkiNotifications: function() {
+	kirkiNotifications: function() {
 
 		var control        = this,
 			acceptUnitless = ( 'undefined' !== typeof control.params.choices && 'undefined' !== typeof control.params.choices.accept_unitless && true === control.params.choices.accept_unitless );
@@ -1852,12 +1852,12 @@ wp.customize.controlConstructor['xirki-dimension'] = wp.customize.xirkiDynamicCo
 			setting.bind( function( value ) {
 				var code = 'long_title';
 
-				if ( false === xirki.util.validate.cssValue( value ) && ( ! acceptUnitless || isNaN( value ) ) ) {
+				if ( false === kirki.util.validate.cssValue( value ) && ( ! acceptUnitless || isNaN( value ) ) ) {
 					setting.notifications.add( code, new wp.customize.Notification(
 						code,
 						{
 							type: 'warning',
-							message: dimensionxirkiL10n['invalid-value']
+							message: dimensionkirkiL10n['invalid-value']
 						}
 					) );
 				} else {
@@ -1867,10 +1867,10 @@ wp.customize.controlConstructor['xirki-dimension'] = wp.customize.xirkiDynamicCo
 		} );
 	}
 } );
-/* global dimensionsxirkiL10n */
-wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicControl.extend( {
+/* global dimensionskirkiL10n */
+wp.customize.controlConstructor['kirki-dimensions'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control     = this,
 			subControls = control.params.choices.controls,
@@ -1901,7 +1901,7 @@ wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicC
 			value[ context ] = jQuery( this ).val();
 
 			// Notifications.
-			control.xirkiNotifications();
+			control.kirkiNotifications();
 
 			// Save the value
 			control.saveValue( value );
@@ -1926,7 +1926,7 @@ wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicC
 	/**
 	 * Handles notifications.
 	 */
-	xirkiNotifications: function() {
+	kirkiNotifications: function() {
 
 		var control = this;
 
@@ -1939,7 +1939,7 @@ wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicC
 				setting.notifications.remove( code );
 
 				_.each( value, function( val, direction ) {
-					if ( false === xirki.util.validate.cssValue( val ) ) {
+					if ( false === kirki.util.validate.cssValue( val ) ) {
 						subs[ direction ] = val;
 					} else {
 						delete subs[ direction ];
@@ -1947,7 +1947,7 @@ wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicC
 				} );
 
 				if ( ! _.isEmpty( subs ) ) {
-					message = dimensionsxirkiL10n['invalid-value'] + ' (' + _.values( subs ).toString() + ') ';
+					message = dimensionskirkiL10n['invalid-value'] + ' (' + _.values( subs ).toString() + ') ';
 					setting.notifications.add( code, new wp.customize.Notification( code, {
 						type: 'warning',
 						message: message
@@ -1960,13 +1960,13 @@ wp.customize.controlConstructor['xirki-dimensions'] = wp.customize.xirkiDynamicC
 	}
 } );
 /* global tinyMCE */
-wp.customize.controlConstructor['xirki-editor'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-editor'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this,
 			element = control.container.find( 'textarea' ),
-			id      = 'xirki-editor-' + control.id.replace( '[', '' ).replace( ']', '' ),
+			id      = 'kirki-editor-' + control.id.replace( '[', '' ).replace( ']', '' ),
 			editor;
 
 		if ( wp.editor && wp.editor.initialize ) {
@@ -1993,9 +1993,9 @@ wp.customize.controlConstructor['xirki-editor'] = wp.customize.xirkiDynamicContr
 		}
 	}
 } );
-wp.customize.controlConstructor['xirki-multicheck'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-multicheck'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this;
 
@@ -2020,8 +2020,8 @@ wp.customize.controlConstructor['xirki-multicheck'] = wp.customize.xirkiDynamicC
 		} );
 	}
 } );
-/* global xirkiControlLoader */
-wp.customize.controlConstructor['xirki-multicolor'] = wp.customize.Control.extend( {
+/* global kirkiControlLoader */
+wp.customize.controlConstructor['kirki-multicolor'] = wp.customize.Control.extend( {
 
 	// When we're finished loading continue processing
 	ready: function() {
@@ -2031,14 +2031,14 @@ wp.customize.controlConstructor['xirki-multicolor'] = wp.customize.Control.exten
 		var control = this;
 
 		// Init the control.
-		if ( ! _.isUndefined( window.xirkiControlLoader ) && _.isFunction( xirkiControlLoader ) ) {
-			xirkiControlLoader( control );
+		if ( ! _.isUndefined( window.kirkiControlLoader ) && _.isFunction( kirkiControlLoader ) ) {
+			kirkiControlLoader( control );
 		} else {
-			control.initXirkiControl();
+			control.initKirkiControl();
 		}
 	},
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		'use strict';
 
@@ -2049,7 +2049,7 @@ wp.customize.controlConstructor['xirki-multicolor'] = wp.customize.Control.exten
 			i       = 0;
 
 		// Proxy function that handles changing the individual colors
-		function xirkiMulticolorChangeHandler( control, value, subSetting ) {
+		function kirkiMulticolorChangeHandler( control, value, subSetting ) {
 
 			var picker = control.container.find( '.multicolor-index-' + subSetting ),
 				args   = {
@@ -2079,7 +2079,7 @@ wp.customize.controlConstructor['xirki-multicolor'] = wp.customize.Control.exten
 
 		// Colors loop
 		while ( i < Object.keys( colors ).length ) {
-			xirkiMulticolorChangeHandler( this, value, keys[ i ] );
+			kirkiMulticolorChangeHandler( this, value, keys[ i ] );
 			i++;
 		}
 	},
@@ -2099,10 +2099,10 @@ wp.customize.controlConstructor['xirki-multicolor'] = wp.customize.Control.exten
 		control.setting.set( val );
 	}
 } );
-wp.customize.controlConstructor['xirki-palette'] = wp.customize.xirkiDynamicControl.extend( {} );
-wp.customize.controlConstructor['xirki-radio-buttonset'] = wp.customize.xirkiDynamicControl.extend( {} );
-wp.customize.controlConstructor['xirki-radio-image'] = wp.customize.xirkiDynamicControl.extend( {} );
-/* global xirkiControlLoader */
+wp.customize.controlConstructor['kirki-palette'] = wp.customize.kirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['kirki-radio-buttonset'] = wp.customize.kirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['kirki-radio-image'] = wp.customize.kirkiDynamicControl.extend( {} );
+/* global kirkiControlLoader */
 var RepeaterRow = function( rowIndex, container, label, control ) {
 
 	'use strict';
@@ -2192,14 +2192,14 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		var control = this;
 
 		// Init the control.
-		if ( ! _.isUndefined( window.xirkiControlLoader ) && _.isFunction( xirkiControlLoader ) ) {
-			xirkiControlLoader( control );
+		if ( ! _.isUndefined( window.kirkiControlLoader ) && _.isFunction( kirkiControlLoader ) ) {
+			kirkiControlLoader( control );
 		} else {
-			control.initXirkiControl();
+			control.initKirkiControl();
 		}
 	},
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		'use strict';
 
@@ -2207,7 +2207,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 			limit,
 			theNewRow;
 
-		// The current value set in Control Class (set in Xirki_Customize_Repeater_Control::to_json() function)
+		// The current value set in Control Class (set in Kirki_Customize_Repeater_Control::to_json() function)
 		var settingValue = this.params.value;
 
 		// The hidden field that keeps the data saved (though we never update it)
@@ -2568,7 +2568,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		var $targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-cropped_image' );
 
-		$targetDiv.find( '.xirki-image-attachment' ).html( '<img src="' + attachment.url + '">' ).hide().slideDown( 'slow' );
+		$targetDiv.find( '.kirki-image-attachment' ).html( '<img src="' + attachment.url + '">' ).hide().slideDown( 'slow' );
 
 		$targetDiv.find( '.hidden-field' ).val( attachment.id );
 		this.$thisButton.text( this.$thisButton.data( 'alt-label' ) );
@@ -2591,7 +2591,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 
 		var $targetDiv = this.$thisButton.closest( '.repeater-field-upload' );
 
-		$targetDiv.find( '.xirki-file-attachment' ).html( '<span class="file"><span class="dashicons dashicons-media-default"></span> ' + attachment.filename + '</span>' ).hide().slideDown( 'slow' );
+		$targetDiv.find( '.kirki-file-attachment' ).html( '<span class="file"><span class="dashicons dashicons-media-default"></span> ' + attachment.filename + '</span>' ).hide().slideDown( 'slow' );
 
 		$targetDiv.find( '.hidden-field' ).val( attachment.id );
 		this.$thisButton.text( this.$thisButton.data( 'alt-label' ) );
@@ -2643,7 +2643,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		$targetDiv = this.$thisButton.closest( '.repeater-field-image,.repeater-field-cropped_image,.repeater-field-upload' );
 		$uploadButton = $targetDiv.find( '.upload-button' );
 
-		$targetDiv.find( '.xirki-image-attachment' ).slideUp( 'fast', function() {
+		$targetDiv.find( '.kirki-image-attachment' ).slideUp( 'fast', function() {
 			jQuery( this ).show().html( jQuery( this ).data( 'placeholder' ) );
 		} );
 		$targetDiv.find( '.hidden-field' ).val( '' );
@@ -2668,7 +2668,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		$targetDiv = this.$thisButton.closest( '.repeater-field-upload' );
 		$uploadButton = $targetDiv.find( '.upload-button' );
 
-		$targetDiv.find( '.xirki-file-attachment' ).slideUp( 'fast', function() {
+		$targetDiv.find( '.kirki-file-attachment' ).slideUp( 'fast', function() {
 			jQuery( this ).show().html( jQuery( this ).data( 'placeholder' ) );
 		} );
 		$targetDiv.find( '.hidden-field' ).val( '' );
@@ -2742,7 +2742,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		'use strict';
 
 		var control       = this,
-			template      = control.repeaterTemplate(), // The template for the new row (defined on Xirki_Customize_Repeater_Control::render_content() ).
+			template      = control.repeaterTemplate(), // The template for the new row (defined on Kirki_Customize_Repeater_Control::render_content() ).
 			settingValue  = this.getValue(), // Get the current setting value.
 			newRowSetting = {}, // Saves the new setting data.
 			templateData, // Data to pass to the template
@@ -3004,9 +3004,9 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend( {
 		} );
 	}
 } );
-wp.customize.controlConstructor['xirki-slider'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-slider'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 		var control      = this,
 			changeAction = ( 'postMessage' === control.setting.transport ) ? 'mousemove change' : 'change',
 			rangeInput   = control.container.find( 'input[type="range"]' ),
@@ -3048,7 +3048,7 @@ wp.customize.controlConstructor['xirki-slider'] = wp.customize.xirkiDynamicContr
 		} );
 	}
 } );
-wp.customize.controlConstructor['xirki-sortable'] = wp.customize.Control.extend( {
+wp.customize.controlConstructor['kirki-sortable'] = wp.customize.Control.extend( {
 
 	// When we're finished loading continue processing
 	ready: function() {
@@ -3094,9 +3094,9 @@ wp.customize.controlConstructor['xirki-sortable'] = wp.customize.Control.extend(
 		return newVal;
 	}
 } );
-wp.customize.controlConstructor['xirki-switch'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-switch'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		'use strict';
 
@@ -3110,9 +3110,9 @@ wp.customize.controlConstructor['xirki-switch'] = wp.customize.xirkiDynamicContr
 		} );
 	}
 } );
-wp.customize.controlConstructor['xirki-toggle'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-toggle'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		var control = this,
 			checkboxValue = control.setting._value;
@@ -3124,10 +3124,10 @@ wp.customize.controlConstructor['xirki-toggle'] = wp.customize.xirkiDynamicContr
 		} );
 	}
 } );
-/* global xirkiL10n, xirki */
-wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicControl.extend( {
+/* global kirkiL10n, kirki */
+wp.customize.controlConstructor['kirki-typography'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 
 		'use strict';
 
@@ -3206,7 +3206,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 
 		// Color.
 		if ( 'undefined' !== typeof control.params.default.color ) {
-			picker = this.container.find( '.xirki-color-control' );
+			picker = this.container.find( '.kirki-color-control' );
 			picker.wpColorPicker( {
 				change: function() {
 					setTimeout( function() {
@@ -3262,25 +3262,25 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 		// Combine forces and build the final data.
 		data = jQuery.extend( {}, controlFontFamilies, {
 			default: {
-				text: xirkiL10n.defaultCSSValues,
+				text: kirkiL10n.defaultCSSValues,
 				children: [
-					{ id: '', text: xirkiL10n.defaultBrowserFamily },
+					{ id: '', text: kirkiL10n.defaultBrowserFamily },
 					{ id: 'initial', text: 'initial' },
 					{ id: 'inherit', text: 'inherit' }
 				]
 			},
 			standard: {
-				text: xirkiL10n.standardFonts,
+				text: kirkiL10n.standardFonts,
 				children: standardFonts
 			},
 			google: {
-				text: xirkiL10n.googleFonts,
+				text: kirkiL10n.googleFonts,
 				children: googleFonts
 			}
 		} );
 
-		if ( xirkiL10n.isScriptDebug ) {
-			console.info( 'Xirki Debug: Font families for control "' + control.id + '":' );
+		if ( kirkiL10n.isScriptDebug ) {
+			console.info( 'Kirki Debug: Font families for control "' + control.id + '":' );
 			console.info( data );
 		}
 
@@ -3293,7 +3293,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 
 		// Set the initial value.
 		if ( value['font-family'] || '' === value['font-family'] ) {
-			value['font-family'] = xirki.util.parseHtmlEntities( value['font-family'].replace( /'/g, '"' ) );
+			value['font-family'] = kirki.util.parseHtmlEntities( value['font-family'].replace( /'/g, '"' ) );
 			fontSelect.val( value['font-family'] ).trigger( 'change' );
 		}
 
@@ -3330,7 +3330,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 		}
 
 		// Hide if we're not on a google-font.
-		if ( 'inherit' === fontFamily || 'initial' === fontFamily || 'google' !== xirki.util.webfonts.getFontType( fontFamily ) ) {
+		if ( 'inherit' === fontFamily || 'initial' === fontFamily || 'google' !== kirki.util.webfonts.getFontType( fontFamily ) ) {
 			jQuery( control.selector + ' .font-backup' ).hide();
 			return;
 		}
@@ -3376,14 +3376,14 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 			selector   = control.selector + ' .variant select',
 			data       = [],
 			isValid    = false,
-			fontType   = xirki.util.webfonts.getFontType( fontFamily ),
+			fontType   = kirki.util.webfonts.getFontType( fontFamily ),
 			variants   = [ '', 'regular', 'italic', '700', '700italic' ],
 			fontWeight,
 			variantSelector,
 			fontStyle;
 
 		if ( 'google' === fontType ) {
-			variants = xirki.util.webfonts.google.getVariants( fontFamily );
+			variants = kirki.util.webfonts.google.getVariants( fontFamily );
 		}
 
 		// Check if we've got custom variants defined for this font.
@@ -3394,8 +3394,8 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 				variants = control.params.choices.fonts.variants[ fontFamily ];
 			}
 		}
-		if ( xirkiL10n.isScriptDebug ) {
-			console.info( 'Xirki Debug: Font variants for font-family "' + fontFamily + '":' );
+		if ( kirkiL10n.isScriptDebug ) {
+			console.info( 'Kirki Debug: Font variants for font-family "' + fontFamily + '":' );
 			console.info( variants );
 		}
 
@@ -3473,7 +3473,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 	 */
 	getFonts: function() {
 		var control            = this,
-			initialGoogleFonts = xirki.util.webfonts.google.getFonts(),
+			initialGoogleFonts = kirki.util.webfonts.google.getFonts(),
 			googleFonts        = {},
 			googleFontsSort    = 'alpha',
 			googleFontsNumber  = 0,
@@ -3486,7 +3486,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 				if ( ! isNaN( control.params.choices.fonts.google[1] ) ) {
 					googleFontsNumber = parseInt( control.params.choices.fonts.google[1], 10 );
 				}
-				googleFonts = xirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
+				googleFonts = kirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
 
 			} else {
 				_.each( control.params.choices.fonts.google, function( fontName ) {
@@ -3496,21 +3496,21 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 				} );
 			}
 		} else {
-			googleFonts = xirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
+			googleFonts = kirki.util.webfonts.google.getFonts( googleFontsSort, '', googleFontsNumber );
 		}
 
 		// Get standard fonts.
 		if ( ! _.isEmpty( control.params.choices.fonts.standard ) ) {
 			_.each( control.params.choices.fonts.standard, function( fontName ) {
-				if ( 'undefined' !== typeof xirki.util.webfonts.standard.fonts[ fontName ] && ! _.isEmpty( xirki.util.webfonts.standard.fonts[ fontName ] ) ) {
+				if ( 'undefined' !== typeof kirki.util.webfonts.standard.fonts[ fontName ] && ! _.isEmpty( kirki.util.webfonts.standard.fonts[ fontName ] ) ) {
 					standardFonts[ fontName ] = {};
-					if ( 'undefined' !== xirki.util.webfonts.standard.fonts[ fontName ].stack && ! _.isEmpty( xirki.util.webfonts.standard.fonts[ fontName ].stack ) ) {
-						standardFonts[ fontName ].family = xirki.util.webfonts.standard.fonts[ fontName ].stack;
+					if ( 'undefined' !== kirki.util.webfonts.standard.fonts[ fontName ].stack && ! _.isEmpty( kirki.util.webfonts.standard.fonts[ fontName ].stack ) ) {
+						standardFonts[ fontName ].family = kirki.util.webfonts.standard.fonts[ fontName ].stack;
 					} else {
 						standardFonts[ fontName ].family = googleFonts[ fontName ];
 					}
-					if ( 'undefined' !== xirki.util.webfonts.standard.fonts[ fontName ].label && ! _.isEmpty( xirki.util.webfonts.standard.fonts[ fontName ].label ) ) {
-						standardFonts[ fontName ].label = xirki.util.webfonts.standard.fonts[ fontName ].label;
+					if ( 'undefined' !== kirki.util.webfonts.standard.fonts[ fontName ].label && ! _.isEmpty( kirki.util.webfonts.standard.fonts[ fontName ].label ) ) {
+						standardFonts[ fontName ].label = kirki.util.webfonts.standard.fonts[ fontName ].label;
 					} else if ( ! _.isEmpty( standardFonts[ fontName ] ) ) {
 						standardFonts[ fontName ].label = standardFonts[ fontName ];
 					}
@@ -3522,7 +3522,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 				}
 			} );
 		} else {
-			_.each( xirki.util.webfonts.standard.fonts, function( font, id ) {
+			_.each( kirki.util.webfonts.standard.fonts, function( font, id ) {
 				standardFonts[ id ] = {
 					family: font.stack,
 					label: font.label

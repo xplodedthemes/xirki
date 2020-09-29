@@ -1,5 +1,5 @@
-/* global xirkiPostMessageFields, WebFont */
-var xirkiPostMessage = {
+/* global kirkiPostMessageFields, WebFont */
+var kirkiPostMessage = {
 
 	/**
 	 * The fields.
@@ -23,8 +23,8 @@ var xirkiPostMessage = {
 		 * @returns {void}
 		 */
 		add: function( id ) {
-			if ( null === document.getElementById( 'xirki-postmessage-' + id ) || 'undefined' === typeof document.getElementById( 'xirki-postmessage-' + id ) ) {
-				jQuery( 'head' ).append( '<style id="xirki-postmessage-' + id + '"></style>' );
+			if ( null === document.getElementById( 'kirki-postmessage-' + id ) || 'undefined' === typeof document.getElementById( 'kirki-postmessage-' + id ) ) {
+				jQuery( 'head' ).append( '<style id="kirki-postmessage-' + id + '"></style>' );
 			}
 		},
 
@@ -38,8 +38,8 @@ var xirkiPostMessage = {
 		 * @returns {void}
 		 */
 		addData: function( id, styles ) {
-			xirkiPostMessage.styleTag.add( id );
-			jQuery( '#xirki-postmessage-' + id ).text( styles );
+			kirkiPostMessage.styleTag.add( id );
+			jQuery( '#kirki-postmessage-' + id ).text( styles );
 		}
 	},
 
@@ -130,7 +130,7 @@ var xirkiPostMessage = {
 		 */
 		fromOutput: function( output, value, controlType ) {
 			var styles      = '',
-				xirkiParent = window.parent.xirki,
+				kirkiParent = window.parent.kirki,
 				googleFont  = '',
 				mediaQuery  = false,
 				processedValue;
@@ -139,13 +139,13 @@ var xirkiPostMessage = {
 				value = window[ output.js_callback[0] ]( value, output.js_callback[1] );
 			}
 			switch ( controlType ) {
-				case 'xirki-typography':
+				case 'kirki-typography':
 					styles += output.element + '{';
 					_.each( value, function( val, key ) {
 						if ( output.choice && key !== output.choice ) {
 							return;
 						}
-						processedValue = xirkiPostMessage.util.processValue( output, val );
+						processedValue = kirkiPostMessage.util.processValue( output, val );
 						if ( false !== processedValue ) {
 							styles += key + ':' + processedValue + ';';
 						}
@@ -153,7 +153,7 @@ var xirkiPostMessage = {
 					styles += '}';
 
 					// Check if this is a googlefont so that we may load it.
-					if ( ! _.isUndefined( WebFont ) && value['font-family'] && 'google' === xirkiParent.util.webfonts.getFontType( value['font-family'] ) ) {
+					if ( ! _.isUndefined( WebFont ) && value['font-family'] && 'google' === kirkiParent.util.webfonts.getFontType( value['font-family'] ) ) {
 
 						// Calculate the googlefont params.
 						googleFont = value['font-family'].replace( /\"/g, '&quot;' );
@@ -174,20 +174,20 @@ var xirkiPostMessage = {
 						} );
 					}
 					break;
-				case 'xirki-background':
-				case 'xirki-dimensions':
-				case 'xirki-multicolor':
-				case 'xirki-sortable':
+				case 'kirki-background':
+				case 'kirki-dimensions':
+				case 'kirki-multicolor':
+				case 'kirki-sortable':
 					styles += output.element + '{';
 					_.each( value, function( val, key ) {
 						if ( output.choice && key !== output.choice ) {
 							return;
 						}
 						if ( 'background-image' === key ) {
-							val = xirkiPostMessage.util.backgroundImageValue( val );
+							val = kirkiPostMessage.util.backgroundImageValue( val );
 						}
 
-						processedValue = xirkiPostMessage.util.processValue( output, val );
+						processedValue = kirkiPostMessage.util.processValue( output, val );
 
 						if ( false !== processedValue ) {
 
@@ -206,8 +206,8 @@ var xirkiPostMessage = {
 					styles += '}';
 					break;
 				default:
-					if ( 'xirki-image' === controlType ) {
-						value = ( ! _.isUndefined( value.url ) ) ? xirkiPostMessage.util.backgroundImageValue( value.url ) : xirkiPostMessage.util.backgroundImageValue( value );
+					if ( 'kirki-image' === controlType ) {
+						value = ( ! _.isUndefined( value.url ) ) ? kirkiPostMessage.util.backgroundImageValue( value.url ) : kirkiPostMessage.util.backgroundImageValue( value );
 					}
 					if ( _.isObject( value ) ) {
 						styles += output.element + '{';
@@ -215,7 +215,7 @@ var xirkiPostMessage = {
 							if ( output.choice && key !== output.choice ) {
 								return;
 							}
-							processedValue = xirkiPostMessage.util.processValue( output, val );
+							processedValue = kirkiPostMessage.util.processValue( output, val );
 							if ( ! output.property ) {
 								output.property = key;
 							}
@@ -225,7 +225,7 @@ var xirkiPostMessage = {
 						} );
 						styles += '}';
 					} else {
-						processedValue = xirkiPostMessage.util.processValue( output, value );
+						processedValue = kirkiPostMessage.util.processValue( output, value );
 						if ( false !== processedValue ) {
 							styles += output.element + '{' + output.property + ':' + processedValue + ';}';
 						}
@@ -283,7 +283,7 @@ var xirkiPostMessage = {
 					value = val;
 				} );
 			}
-			value = xirkiPostMessage.util.processValue( output, value );
+			value = kirkiPostMessage.util.processValue( output, value );
 
 			if ( output.attr ) {
 				jQuery( output.element ).attr( output.attr, value );
@@ -323,21 +323,21 @@ var xirkiPostMessage = {
 
 jQuery( document ).ready( function() {
 
-	_.each( xirkiPostMessageFields, function( field ) {
+	_.each( kirkiPostMessageFields, function( field ) {
 		wp.customize( field.settings, function( value ) {
 			value.bind( function( newVal ) {
 				var styles = '';
 				_.each( field.js_vars, function( output ) {
-					if ( ! output.function || 'undefined' === typeof xirkiPostMessage[ output.function ] ) {
+					if ( ! output.function || 'undefined' === typeof kirkiPostMessage[ output.function ] ) {
 						output.function = 'css';
 					}
 					if ( 'css' === output.function ) {
-						styles += xirkiPostMessage.css.fromOutput( output, newVal, field.type );
+						styles += kirkiPostMessage.css.fromOutput( output, newVal, field.type );
 					} else {
-						xirkiPostMessage[ output.function ].fromOutput( output, newVal, field.type );
+						kirkiPostMessage[ output.function ].fromOutput( output, newVal, field.type );
 					}
 				} );
-				xirkiPostMessage.styleTag.addData( field.settings, styles );
+				kirkiPostMessage.styleTag.addData( field.settings, styles );
 			} );
 		} );
 	} );

@@ -1,6 +1,6 @@
-wp.customize.controlConstructor['xirki-date'] = wp.customize.xirkiDynamicControl.extend( {
+wp.customize.controlConstructor['kirki-date'] = wp.customize.kirkiDynamicControl.extend( {
 
-	initXirkiControl: function() {
+	initKirkiControl: function() {
 		var control  = this,
 			selector = control.selector + ' input.datepicker';
 

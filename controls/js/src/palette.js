@@ -1,1 +1,1 @@
-wp.customize.controlConstructor['xirki-palette'] = wp.customize.xirkiDynamicControl.extend( {} );
+wp.customize.controlConstructor['kirki-palette'] = wp.customize.kirkiDynamicControl.extend( {} );
