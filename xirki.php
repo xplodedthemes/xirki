@@ -66,8 +66,6 @@ $xirki = xirki();
 // Instantiate the modules.
 $xirki->modules = new Xirki_Modules();
 
-Xirki::$url = plugins_url( '', __FILE__ );
-
 // Instantiate classes.
 new Xirki();
 new Xirki_L10n();

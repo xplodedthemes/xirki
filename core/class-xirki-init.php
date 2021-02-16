@@ -65,17 +65,7 @@ class Xirki_Init {
 			return;
 		}
 
-		// Get correct URL and path to wp-content.
-		$content_url = untrailingslashit( dirname( dirname( get_stylesheet_directory_uri() ) ) );
-		$content_dir = wp_normalize_path( untrailingslashit( WP_CONTENT_DIR ) );
-
-		Xirki::$url = str_replace( $content_dir, $content_url, wp_normalize_path( Xirki::$path ) );
-
-		// Apply the xirki_config filter.
-		$config = apply_filters( 'xirki_config', array() );
-		if ( isset( $config['url_path'] ) ) {
-			Xirki::$url = $config['url_path'];
-		}
+		Xirki::$url = plugins_url( '', XIRKI_PLUGIN_FILE );
 
 		// Make sure the right protocol is used.
 		Xirki::$url = set_url_scheme( Xirki::$url );
