@@ -40,7 +40,7 @@ if ( ! defined( 'XIRKI_PLUGIN_FILE' ) ) {
 
 // Define the XIRKI_VERSION constant.
 if ( ! defined( 'XIRKI_VERSION' ) ) {
-	define( 'XIRKI_VERSION', '3.1.3' );
+	define( 'XIRKI_VERSION', '3.1.6' );
 }
 
 // Make sure the path is properly set.
@@ -66,7 +66,6 @@ $xirki = xirki();
 // Instantiate the modules.
 $xirki->modules = new Xirki_Modules();
 
-Xirki::$url = plugins_url( '', __FILE__ );
 
 // Instantiate classes.
 new Xirki();
