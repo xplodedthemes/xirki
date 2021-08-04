@@ -139,7 +139,7 @@ class Xirki_Modules_CSS {
 
 		// Enqueue the dynamic stylesheet.
 		wp_enqueue_style(
-			'xirki-styles',
+            'xirki-dynamic-styles',
 			add_query_arg( $args, site_url() ),
 			array(),
 			XIRKI_VERSION
