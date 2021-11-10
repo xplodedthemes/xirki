@@ -1389,7 +1389,7 @@ xirki = jQuery.extend( xirki, {
 				}
 
 				// Check in googlefonts.
-				if ( 'undefined' !== typeof self.google.fonts.items && 'undefined' !== typeof self.google.fonts.items[ family ] ) {
+				if ( 'undefined' !== typeof self.google.fonts.items[ family ] ) {
 					return 'google';
 				}
 				return false;
@@ -1692,14 +1692,7 @@ wp.customize.controlConstructor['xirki-background'] = wp.customize.Control.exten
 				setTimeout( function() {
 					control.saveValue( 'background-color', picker.val() );
 				}, 100 );
-			},
-			//Added clear
-			clear: function (event) {
-				setTimeout( function() {
-					control.saveValue( 'color', '' );
-				}, 100 );
 			}
-
 		} );
 
 		// Background-Repeat.
@@ -3219,14 +3212,7 @@ wp.customize.controlConstructor['xirki-typography'] = wp.customize.xirkiDynamicC
 					setTimeout( function() {
 						control.saveValue( 'color', picker.val() );
 					}, 100 );
-				},
-				//Added clear
-				clear: function (event) {
-					setTimeout( function() {
-						control.saveValue( 'color', '' );
-					}, 100 );
 				}
-
 			} );
 		}
 	},
