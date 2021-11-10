@@ -5,7 +5,7 @@
  * Description:   The Ultimate WordPress Customizer Framework
  * Author:        XplodedThemes
  * Author URI:    https://xplodedthemes.com/
- * Version:       3.1.6
+ * Version:       3.1.9
  * Text Domain:   xirki
  * Requires WP:   4.9
  * Requires PHP:  5.3
@@ -40,7 +40,7 @@ if ( ! defined( 'XIRKI_PLUGIN_FILE' ) ) {
 
 // Define the XIRKI_VERSION constant.
 if ( ! defined( 'XIRKI_VERSION' ) ) {
-	define( 'XIRKI_VERSION', '3.1.6' );
+	define( 'XIRKI_VERSION', '3.1.9' );
 }
 
 // Make sure the path is properly set.
@@ -66,6 +66,7 @@ $xirki = xirki();
 // Instantiate the modules.
 $xirki->modules = new Xirki_Modules();
 
+Xirki::$url = plugins_url( '', __FILE__ );
 
 // Instantiate classes.
 new Xirki();
