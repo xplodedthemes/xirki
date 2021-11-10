@@ -108,15 +108,6 @@
   width: 100% !important;
 }
 
-.rtl .customize-control-xirki-color .iris-border .iris-palette-container {
-  left: auto;
-  right: 10px;
-}
-.rtl .customize-control-xirki-color .wp-color-result .color-alpha {
-  left: auto !important;
-  right: 0;
-}
-
 .customize-control-xirki-dashicons {
   position: relative;
 }
@@ -359,10 +350,6 @@
 .customize-control-xirki-radio-buttonset .buttonset .switch-input:checked + .switch-label {
   background-color: #00a0d2;
   color: rgba(255, 255, 255, 0.8);
-}
-.customize-control-xirki-radio-buttonset .screen-reader-text:focus {
-  clip-path: inset(50%);
-  -webkit-clip-path: inset(50%);
 }
 
 .customize-control-xirki-radio-image > .image {
@@ -652,14 +639,6 @@
   align-items: baseline;
 }
 
-.rtl .customize-control-xirki-slider .wrapper .slider-reset {
-  right: auto;
-  left: 0;
-}
-.rtl .customize-control-xirki-slider .wrapper input[type=text] {
-  text-align: left;
-}
-
 .customize-control-xirki-sortable ul.ui-sortable li {
   padding: 5px 10px;
   border: 1px solid #333;
@@ -732,7 +711,6 @@
 .customize-control-xirki-switch input + label {
   margin-left: 0;
   margin-right: 0;
-  min-width: 62px;
 }
 .customize-control-xirki-switch input:checked + label {
   background: #0073aa;
@@ -748,17 +726,9 @@
 .customize-control-xirki-switch input:checked + label .switch-off {
   opacity: 0;
 }
-.customize-control-xirki-switch .screen-reader-text:focus {
-  clip-path: inset(50%);
-  -webkit-clip-path: inset(50%);
-}
 
 .customize-control-xirki-toggle {
   position: relative;
-}
-.customize-control-xirki-toggle .screen-reader-text:focus {
-  clip-path: inset(50%);
-  -webkit-clip-path: inset(50%);
 }
 .customize-control-xirki-toggle label {
   display: flex;
