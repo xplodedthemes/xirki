@@ -80,10 +80,10 @@ require_once wp_normalize_path( dirname( __FILE__ ) . '/lib/class-aricolor.php' 
 // Add an empty config for global fields.
 Xirki::add_config( '' );
 
-$custom_config_path = dirname( __FILE__ ) . '/custom-config.php';
-$custom_config_path = wp_normalize_path( $custom_config_path );
-if ( file_exists( $custom_config_path ) ) {
-	require_once $custom_config_path; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
+$xirki_custom_config_path = dirname( __FILE__ ) . '/custom-config.php';
+$xirki_custom_config_path = wp_normalize_path( $xirki_custom_config_path );
+if ( file_exists( $xirki_custom_config_path ) ) {
+	require_once $xirki_custom_config_path; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 }
 
 // Add upgrade notifications.
